@@ -19,9 +19,9 @@ const testimonialsData: TestimonialItem[] = [
     location: 'Karachi',
     rating: 5,
     testimonial:
-      '“The craftsmanship is even more beautiful in person. My Silver Haus pieces feel elegant enough for celebrations yet effortless enough to wear every day.”',
+      '“The diamond brilliance is even more breathtaking in person. My AZ JEWELRY pieces feel elegant enough for grand celebrations yet effortless enough to wear every day.”',
     avatarInitials: 'AK',
-    purchasedItem: 'Statement Solitaire Ring'
+    purchasedItem: 'AZ Luminary Solitaire Ring'
   },
   {
     id: '2',
@@ -29,9 +29,9 @@ const testimonialsData: TestimonialItem[] = [
     location: 'Lahore',
     rating: 5,
     testimonial:
-      '“I ordered a gift for my sister and the presentation was beautiful. The jewellery looked incredibly refined and she absolutely loved it.”',
+      '“I ordered a lab diamond pendant for my sister and the presentation was stunning. The diamond clarity looked incredibly refined and she absolutely loved it.”',
     avatarInitials: 'MA',
-    purchasedItem: 'Gilded Chain Necklace'
+    purchasedItem: 'AZ Étoile Lab Diamond Pendant'
   },
   {
     id: '3',
@@ -39,9 +39,9 @@ const testimonialsData: TestimonialItem[] = [
     location: 'Karachi',
     rating: 5,
     testimonial:
-      '“Silver Haus has such a beautiful balance of modern design and timeless elegance. It has quickly become one of my favourite jewellery brands.”',
+      '“AZ JEWELRY has such a beautiful balance of modern design and timeless diamond brilliance. It has quickly become my go-to luxury jewellery brand.”',
     avatarInitials: 'SM',
-    purchasedItem: 'Royal Emerald Drop'
+    purchasedItem: 'AZ Royal Diamond Set'
   },
   {
     id: '4',
@@ -49,9 +49,9 @@ const testimonialsData: TestimonialItem[] = [
     location: 'Islamabad',
     rating: 5,
     testimonial:
-      '“Beautiful finishing, elegant designs and a very premium experience. The piece I bought received compliments the first time I wore it.”',
+      '“Exquisite finishing, certified lab-grown diamonds, and a very premium luxury experience. The tennis bracelet received compliments the first time I wore it.”',
     avatarInitials: 'HS',
-    purchasedItem: 'Woven Gold Heritage Bangle'
+    purchasedItem: 'AZ Seraphina Diamond Tennis Bracelet'
   }
 ];
 
@@ -124,7 +124,6 @@ export const Testimonials: React.FC = () => {
     touchEndX.current = null;
   };
 
-  // Compute visible cards for sliding track
   const getVisibleTestimonials = () => {
     const visible: TestimonialItem[] = [];
     for (let i = 0; i < totalItems; i++) {
@@ -147,9 +146,9 @@ export const Testimonials: React.FC = () => {
           <div className="testimonials__header">
             <div className="testimonials__heading-group">
               <span className="testimonials__eyebrow">CUSTOMER STORIES</span>
-              <h2 className="testimonials__title">Loved by women who wear Silver Haus</h2>
+              <h2 className="testimonials__title">Loved by women who wear AZ JEWELRY</h2>
               <p className="testimonials__subtitle">
-                Thoughtfully chosen pieces, beautifully worn and treasured.
+                Thoughtfully chosen lab-grown diamond pieces, beautifully worn and treasured.
               </p>
             </div>
 

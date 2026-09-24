@@ -8,14 +8,14 @@ import { CartDrawer } from '../components/cart/CartDrawer';
 import { WhatsAppButton } from '../components/layout/WhatsAppButton';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 
-// Existing assets
-import ringsImg from '../assets/Rings.jpg';
-import necklacesImg from '../assets/Necklaces.jpg';
-import earringsImg from '../assets/Earrings.jpg';
-import braceletsImg from '../assets/Bracelets.jpg';
-import artisanImg from '../assets/Artisan Heritage.jpg';
-import carousel1 from '../assets/Newsletter Bg.jpg';
-import BazarBanner from '../assets/Bazar Banner.jpg';
+// AZ JEWELRY Photography
+import ringsImg from '../assets/hero-ring.jpg';
+import necklacesImg from '../assets/hero-neckless.jpg';
+import earringsImg from '../assets/hero-set.jpg';
+import braceletsImg from '../assets/hero-brecelet.jpg';
+import artisanImg from '../assets/hero-set2.jpg';
+import heroBg from '../assets/hero-neckless4.jpg';
+import stripBanner from '../assets/hero-neckless3.jpg';
 
 /* ─────────────────────────────────────────
    COLLECTION DATA
@@ -34,26 +34,26 @@ const beliefs = [
   {
     id: 'authentic',
     number: '01',
-    title: 'Authentic Materials',
-    body: 'Crafted in genuine 925 Sterling Silver — verified, hallmarked and built to last.',
+    title: 'Certified Lab-Grown Diamonds',
+    body: 'Indistinguishable from mined diamonds in physical, chemical, and optical composition — 100% conflict-free and ethically created.',
   },
   {
     id: 'timeless',
     number: '02',
-    title: 'Timeless Design',
-    body: 'Minimal forms designed to remain relevant and beautiful beyond passing trends.',
+    title: 'Precision Craftsmanship',
+    body: 'Hand-set solitaire mountings, VVS clarity diamonds, and 18k solid gold & platinum finishes engineered for eternal brilliance.',
   },
   {
     id: 'everyday',
     number: '03',
-    title: 'Everyday Luxury',
-    body: 'Fine jewellery made to become an effortless part of your daily wardrobe.',
+    title: 'Everyday High Jewellery',
+    body: 'Fine diamond jewellery designed to seamlessly move from daily wear to grand red-carpet celebrations.',
   },
   {
     id: 'craft',
     number: '04',
-    title: 'Thoughtful Craft',
-    body: 'Every piece is carefully selected with close attention to detail and finish.',
+    title: 'Unrivaled Transparency',
+    body: 'Every AZ JEWELRY diamond is accompanied by verified certification, giving you ultimate peace of mind and luxury confidence.',
   },
 ];
 
@@ -73,28 +73,26 @@ export const AboutPage: React.FC = () => {
         {/* ═══════════════════════════════════════
             SECTION 1 — EDITORIAL HERO
         ═══════════════════════════════════════ */}
-        <section className="about-hero" aria-label="Silver Haus Story Hero">
+        <section className="about-hero" aria-label="AZ JEWELRY Story Hero">
           {/* Background image */}
           <div className="about-hero__bg">
-            <img src={carousel1} alt="Silver Haus Editorial" className="about-hero__bg-img" />
+            <img src={heroBg} alt="AZ JEWELRY Editorial" className="about-hero__bg-img" />
             <div className="about-hero__overlay" />
           </div>
 
           {/* Content */}
           <div className="container about-hero__content">
             <ScrollReveal delay={0}>
-              <span className="about-hero__eyebrow">THE SILVER HAUS STORY</span>
+              <span className="about-hero__eyebrow">THE AZ JEWELRY STORY</span>
             </ScrollReveal>
 
             <ScrollReveal delay={120}>
               <h1 className="about-hero__heading">
-                Jewellery,<br />
-                <em>Refined for</em><br />
-                Modern Living.
+                Lab Grown<br />
+                <em>Diamonds,</em><br />
+                Refined.
               </h1>
             </ScrollReveal>
-
-
 
             <ScrollReveal delay={320}>
               <Link to="/shop" className="about-hero__cta">
@@ -120,9 +118,9 @@ export const AboutPage: React.FC = () => {
             {/* Left — large heading */}
             <ScrollReveal delay={0}>
               <div className="about-story__heading-col">
-                <span className="about-story__eyebrow">Our Story</span>
+                <span className="about-story__eyebrow">Brand Heritage</span>
                 <h2 className="about-story__big-heading" id="story-heading">
-                  OUR<br />STORY
+                  AZ<br />JEWELRY
                 </h2>
               </div>
             </ScrollReveal>
@@ -131,37 +129,30 @@ export const AboutPage: React.FC = () => {
             <ScrollReveal delay={120}>
               <div className="about-story__body-col">
                 <p className="about-story__lead">
-                  Rooted in the heart of Karachi's historic jewellery district —{' '}
-                  <strong>Zaibunnisa Street, Saddar</strong> — Silver Haus was founded
-                  to rethink how fine metals fit into modern wardrobes.
+                  At <strong>AZ JEWELRY</strong>, we pioneer the future of luxury with certified{' '}
+                  <strong>Lab-Grown Diamonds</strong> — combining world-class diamond brilliance with conscious, ethical craftsmanship.
                 </p>
                 <p className="about-story__text">
-                  For generations, Saddar has been the pulse of Pakistan's artisanal
-                  metalwork and luxury jewellery. We took that deep-rooted tradition
-                  of metal smithing and stripped away the bulky, outdated designs of
-                  the past.
+                  Originating with a reverence for Pakistan’s master metalworking traditions in historic Saddar, Karachi, AZ JEWELRY reimagines fine jewellery for the modern connoisseur. We select only high-clarity, brilliant-cut lab-grown diamonds set into solid 18k gold, platinum, and rhodium-finished silver.
                 </p>
                 <p className="about-story__text">
-                  The result? A curated house of minimalist, versatile, and striking{' '}
-                  <strong>925 Sterling Silver</strong> creations tailored for today's
-                  fashion-conscious generation — pieces that move from morning to evening,
-                  from casual to ceremonial, without missing a beat.
+                  Our lab-grown diamonds share the exact carbon crystal lattice, optical fire, and hardness (10 Mohs) as mined diamonds — delivering incredible brilliance, larger carat sizes, and unmatched purity without environmental compromise.
                 </p>
 
                 <div className="about-story__stat-row">
                   <div className="about-story__stat">
-                    <span className="about-story__stat-num">925</span>
-                    <span className="about-story__stat-label">Sterling Silver</span>
+                    <span className="about-story__stat-num">VVS1</span>
+                    <span className="about-story__stat-label">Diamond Clarity</span>
                   </div>
                   <div className="about-story__stat-divider" aria-hidden="true" />
                   <div className="about-story__stat">
                     <span className="about-story__stat-num">100%</span>
-                    <span className="about-story__stat-label">Authentic</span>
+                    <span className="about-story__stat-label">Conflict Free</span>
                   </div>
                   <div className="about-story__stat-divider" aria-hidden="true" />
                   <div className="about-story__stat">
                     <span className="about-story__stat-num">PKR</span>
-                    <span className="about-story__stat-label">Local Pricing</span>
+                    <span className="about-story__stat-label">Direct Pricing</span>
                   </div>
                 </div>
               </div>
@@ -172,9 +163,9 @@ export const AboutPage: React.FC = () => {
           {/* Decorative full-width image strip */}
           <ScrollReveal delay={60} direction="fade">
             <div className="about-story__image-strip">
-              <img src={BazarBanner} alt="Location Banner" className="about-story__strip-img" loading="lazy" />
+              <img src={stripBanner} alt="AZ JEWELRY Campaign Banner" className="about-story__strip-img" loading="lazy" />
               <div className="about-story__strip-overlay" />
-              <span className="about-story__strip-label">Zaibunnisa Street · Saddar · Karachi</span>
+              <span className="about-story__strip-label">AZ JEWELRY · LAB GROWN DIAMONDS</span>
             </div>
           </ScrollReveal>
         </section>
@@ -190,9 +181,7 @@ export const AboutPage: React.FC = () => {
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <blockquote className="about-statement__quote">
-                "We bridge the gap between heavy traditional wear and disposable
-                fashion jewellery — offering authentic silver that elevates your
-                everyday look without compromising on quality."
+                "We believe luxury should be brilliant, sustainable, and uncompromising. AZ JEWELRY brings certified lab-grown diamond elegance into everyday life."
               </blockquote>
             </ScrollReveal>
             <ScrollReveal delay={200}>
@@ -203,7 +192,7 @@ export const AboutPage: React.FC = () => {
 
 
         {/* ═══════════════════════════════════════
-            SECTION 4 — KARACHI / HERITAGE
+            SECTION 4 — HERITAGE & CRAFT
         ═══════════════════════════════════════ */}
         <section className="about-heritage" aria-labelledby="heritage-heading">
           <div className="container about-heritage__inner">
@@ -214,7 +203,7 @@ export const AboutPage: React.FC = () => {
                 <div className="about-heritage__img-frame">
                   <img
                     src={artisanImg}
-                    alt="Artisan crafting silver jewellery — Karachi heritage"
+                    alt="AZ JEWELRY Master Diamond Artisans"
                     className="about-heritage__img"
                     loading="lazy"
                   />
@@ -225,23 +214,19 @@ export const AboutPage: React.FC = () => {
             {/* Right text */}
             <ScrollReveal delay={140}>
               <div className="about-heritage__text-col">
-                <span className="about-heritage__eyebrow">Heritage &amp; Craft</span>
+                <span className="about-heritage__eyebrow">Master Craftsmanship</span>
                 <h2 className="about-heritage__heading" id="heritage-heading">
-                  ROOTED IN<br />SADDAR
+                  ARTISANAL<br />EXCELLENCE
                 </h2>
                 <p className="about-heritage__body">
-                  Inspired by generations of craftsmanship in Karachi's historic
-                  jewellery district, we bring the character of traditional metalwork
-                  into a cleaner, more contemporary expression.
+                  Every solitaire setting, tennis link, and chandelier drop in the AZ JEWELRY collection is meticulously hand-finished. Our master setters align each diamond facet to ensure maximum light dispersion and fire.
                 </p>
                 <p className="about-heritage__body">
-                  Every Silver Haus piece carries within it the spirit of Saddar's
-                  artisan culture — reimagined through a modern, editorial lens so
-                  that heritage and style are never in conflict.
+                  By pairing artisanal setting techniques with advanced lab-grown diamond innovation, AZ JEWELRY delivers heirloom-quality pieces crafted to shine across generations.
                 </p>
                 <div className="about-heritage__location-tag">
                   <span className="about-heritage__location-dot" aria-hidden="true" />
-                  <span>Zaibunnisa Street, Saddar, Karachi, Pakistan</span>
+                  <span>AZ JEWELRY Flagship · Saddar, Karachi, Pakistan</span>
                 </div>
               </div>
             </ScrollReveal>
@@ -257,9 +242,9 @@ export const AboutPage: React.FC = () => {
           <div className="container">
             <ScrollReveal delay={0}>
               <div className="about-beliefs__header">
-                <span className="about-beliefs__eyebrow">Our Values</span>
+                <span className="about-beliefs__eyebrow">Our Core Values</span>
                 <h2 className="about-beliefs__heading" id="beliefs-heading">
-                  WHAT WE BELIEVE
+                  THE AZ JEWELRY STANDARDS
                 </h2>
               </div>
             </ScrollReveal>
@@ -291,7 +276,7 @@ export const AboutPage: React.FC = () => {
               <div className="about-collection__header">
                 <span className="about-collection__eyebrow">Explore</span>
                 <h2 className="about-collection__heading" id="collection-heading">
-                  THE COLLECTION
+                  THE DIAMOND COLLECTION
                 </h2>
               </div>
             </ScrollReveal>
@@ -302,7 +287,7 @@ export const AboutPage: React.FC = () => {
                   <Link
                     to={cat.link}
                     className="about-collection-card"
-                    aria-label={`Shop ${cat.label}`}
+                    aria-label={`Shop AZ JEWELRY ${cat.label}`}
                   >
                     <div className="about-collection-card__img-wrap">
                       <img
@@ -333,16 +318,16 @@ export const AboutPage: React.FC = () => {
         <section className="about-cta" aria-label="Shop the Collection">
           <div className="container about-cta__inner">
             <ScrollReveal delay={0}>
-              <span className="about-cta__eyebrow">Ready to explore?</span>
+              <span className="about-cta__eyebrow">Ready to shine?</span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
               <h2 className="about-cta__heading">
-                Find Your Signature Piece
+                Find Your Signature Diamond Piece
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <p className="about-cta__sub">
-                Discover jewellery designed to become part of your story.
+                Discover lab-grown diamond jewellery designed to become part of your story.
               </p>
             </ScrollReveal>
             <ScrollReveal delay={280}>

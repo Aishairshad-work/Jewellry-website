@@ -7,6 +7,7 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { AboutPage } from './pages/AboutPage';
 import { Preloader } from './components/common/Preloader';
+import { PageTransition } from './components/common/PageTransition';
 import './styles/globals.css';
 import './styles/home.css';
 import './styles/about.css';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
       <Preloader />
       <ShopProvider>
         <ScrollToTop />
+        <PageTransition />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/shop" element={<ProductListingPage />} />

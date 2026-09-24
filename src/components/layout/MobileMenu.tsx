@@ -44,7 +44,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     >
       {/* Header */}
       <div className="mobile-menu__header">
-        <img src={logo} alt="Silver Haus Logo" className="mobile-menu__logo" />
+        <img src={logo} alt="AZ JEWELRY Logo" className="mobile-menu__logo" />
         <button className="mobile-menu__close-btn" onClick={onClose} aria-label="Close menu">
           <span>Close</span>
           <X size={20} />
@@ -128,13 +128,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
         <div className="mobile-menu__socials">
           <a
-            href="https://www.instagram.com/silvere_haus/"
+            href="https://www.instagram.com/azjewelryofficial/"
             target="_blank"
             rel="noopener noreferrer"
             className="mobile-menu__social-link"
             style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
           >
-            <Instagram size={14} /> Instagram @silvere_haus
+            <Instagram size={14} /> Instagram @azjewelryofficial
           </a>
         </div>
       </div>

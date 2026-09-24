@@ -2,20 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import logo from '../../assets/Logo-black.png';
 
 /**
- * Silver Haus Preloader
+ * AZ JEWELRY Preloader
  *
  * - Shows only once per browser session (sessionStorage flag)
  * - Handles React.StrictMode double-mount gracefully
- * - Animates logo fade+rise, thin progress line with shimmer, ring outline
+ * - Animates logo fade+rise, thin progress line with shimmer, gemstone ring outline
  * - Exits with a graceful upward fade after ~1.7s
- * - Fully respects prefers-reduced-motion
  */
 
-const SESSION_KEY = 'sh_preloader_shown';
+const SESSION_KEY = 'az_preloader_shown';
 
 export const Preloader: React.FC = () => {
-  // Check sessionStorage synchronously during render (before first paint)
-  // so the preloader never flickers if it shouldn't show.
   const shouldShow = useRef(!sessionStorage.getItem(SESSION_KEY));
   const [phase, setPhase] = useState<'enter' | 'exit' | 'done'>(
     shouldShow.current ? 'enter' : 'done'
@@ -27,10 +24,6 @@ export const Preloader: React.FC = () => {
     // Mark as shown immediately
     sessionStorage.setItem(SESSION_KEY, '1');
 
-    // Sequence:
-    //  0ms   — enter (logo + ring fade in, line progresses)
-    // 1500ms — begin exit transition
-    // 1950ms — mark as done (remove from DOM)
     const exitTimer = setTimeout(() => setPhase('exit'), 1500);
     const doneTimer = setTimeout(() => setPhase('done'), 1950);
 
@@ -57,7 +50,7 @@ export const Preloader: React.FC = () => {
         <div className="sh-preloader__logo-wrap">
           <img
             src={logo}
-            alt="Silver Haus"
+            alt="AZ JEWELRY — Lab Grown Diamonds"
             className="sh-preloader__logo"
             draggable={false}
           />
@@ -72,7 +65,7 @@ export const Preloader: React.FC = () => {
       </div>
 
       {/* Micro caption */}
-      <p className="sh-preloader__caption">Crafted in Karachi</p>
+      <p className="sh-preloader__caption">AZ JEWELRY · LAB GROWN DIAMONDS</p>
     </div>
   );
 };

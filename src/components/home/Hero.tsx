@@ -2,14 +2,14 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
 
-// Import Jewellery Campaign Assets
-import carousel1 from '../../assets/Carousel 1.png';
-import carousel2 from '../../assets/Carousel 2.png';
-import carousel3 from '../../assets/Carousel 3.png';
-import carousel4 from '../../assets/Carousel 4.png';
-import carousel5 from '../../assets/Carousel 5.png';
-import carousel6 from '../../assets/Carousel 6.png';
-import carousel7 from '../../assets/Carousel 7.png';
+// Import AZ JEWELRY Campaign Photography
+import heroNecklace from '../../assets/hero-neckless.jpg';
+import heroBracelet from '../../assets/hero-brecelet.jpg';
+import heroSet from '../../assets/hero-set.jpg';
+import heroRing from '../../assets/hero-ring.jpg';
+import heroNecklace2 from '../../assets/hero-neckless2.jpg';
+import heroSet2 from '../../assets/hero-set2.jpg';
+import heroNecklace3 from '../../assets/hero-neckless3.jpg';
 
 interface GalleryItem {
   id: number;
@@ -22,51 +22,51 @@ interface GalleryItem {
 const galleryItems: GalleryItem[] = [
   {
     id: 1,
-    image: carousel1,
-    tag: 'Statement Rings',
-    title: 'The Solitaire Edition',
+    image: heroNecklace,
+    tag: 'Solitaire Edition',
+    title: 'Lab Diamond Pendant',
     offset: 0
   },
   {
     id: 2,
-    image: carousel2,
-    tag: 'Artisan Bangles',
-    title: 'Woven Gold Heritage',
+    image: heroBracelet,
+    tag: 'Fine Bracelets',
+    title: 'Woven Diamond Cuff',
     offset: 1
   },
   {
     id: 3,
-    image: carousel3,
+    image: heroSet,
     tag: 'High Jewellery',
-    title: 'The Royal Emerald Drop',
+    title: 'The Royal Diamond Set',
     offset: 2
   },
   {
     id: 4,
-    image: carousel4,
-    tag: 'Bridal Sets',
-    title: 'The Eternal Vow',
+    image: heroRing,
+    tag: 'Statement Rings',
+    title: 'Celeste Eternity Band',
     offset: 0
   },
   {
     id: 5,
-    image: carousel5,
-    tag: 'Fine Necklaces',
-    title: 'Gilded Chain Signature',
+    image: heroNecklace2,
+    tag: 'Pendant Edit',
+    title: 'Solene Diamond Drop',
     offset: 1
   },
   {
     id: 6,
-    image: carousel6,
-    tag: 'Editorial Drops',
-    title: 'Cascading Pearl Earrings',
+    image: heroSet2,
+    tag: 'Gala Collection',
+    title: 'Lab Diamond Earrings & Set',
     offset: 2
   },
   {
     id: 7,
-    image: carousel7,
-    tag: 'Stacked Bracelets',
-    title: 'The Layered Cuff',
+    image: heroNecklace3,
+    tag: 'Editorial Edit',
+    title: 'Grand Regal Choker',
     offset: 1
   }
 ];
@@ -80,8 +80,12 @@ export const Hero: React.FC = () => {
       {/* Editorial Content Column */}
       <div className="hero__content">
         <ScrollReveal delay={0}>
+          <div className="hero__brand-badge">
+            <span className="hero__badge-sparkle">✦</span>
+            <span>LAB GROWN DIAMONDS</span>
+          </div>
           <h1 className="hero__headline">
-            JEWELLERY, <span className="hero__headline-italic">REFINED</span> FOR YOU.
+            AZ JEWELRY, <span className="hero__headline-italic">REFINED</span> FOR YOU.
           </h1>
         </ScrollReveal>
 
@@ -92,8 +96,8 @@ export const Hero: React.FC = () => {
               <ArrowRight size={15} className="btn-icon" />
             </a>
 
-            <a href="#about" className="btn-secondary-link">
-              <span>DISCOVER SILVER HAUS</span>
+            <a href="/about" className="btn-secondary-link">
+              <span>DISCOVER AZ JEWELRY</span>
               <span className="btn-arrow">→</span>
             </a>
           </div>
@@ -105,7 +109,7 @@ export const Hero: React.FC = () => {
         <div
           className="hero__gallery-carousel"
           role="region"
-          aria-label="Featured Jewellery Collection Gallery"
+          aria-label="AZ JEWELRY Featured Diamond Collection Gallery"
         >
           <div className="hero__gallery-track">
             {loopedGalleryItems.map((item, index) => (
@@ -116,7 +120,7 @@ export const Hero: React.FC = () => {
               >
                 <img
                   src={item.image}
-                  alt={`${item.title} - Silver Haus Luxury Jewellery`}
+                  alt={`${item.title} - AZ JEWELRY Lab Grown Diamonds`}
                   className="gallery-card__img"
                   loading={index < galleryItems.length ? 'eager' : 'lazy'}
                 />

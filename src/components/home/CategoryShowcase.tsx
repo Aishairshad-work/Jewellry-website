@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
 
-// Reuse the same campaign photography already shipped with the site
-import ringsImg from '../../assets/Product3.png';
-import necklaceImg from '../../assets/Carousel 1.png';
-import earringsImg from '../../assets/Product1.png';
-import braceletsImg from '../../assets/Carousel 2.png';
+// AZ JEWELRY Category photography
+import ringsImg from '../../assets/hero-ring.jpg';
+import necklaceImg from '../../assets/product-neckless3.jpg';
+import earringsImg from '../../assets/hero-set.jpg';
+import braceletsImg from '../../assets/hero-brecelet.jpg';
 
 interface ShowcaseCategory {
   id: string;
@@ -21,28 +21,28 @@ const showcaseCategories: ShowcaseCategory[] = [
   {
     id: 'rings',
     label: 'Rings',
-    tagline: 'Solitaires & bands',
+    tagline: 'Solitaires & eternity bands',
     href: '/shop/rings',
     image: ringsImg
   },
   {
     id: 'necklaces',
     label: 'Necklaces',
-    tagline: 'Pendants & chains',
+    tagline: 'Pendants & diamond chokers',
     href: '/shop/necklaces',
     image: necklaceImg
   },
   {
     id: 'earrings',
     label: 'Earrings',
-    tagline: 'Studs & drops',
+    tagline: 'Studs & chandelier drops',
     href: '/shop/earrings',
     image: earringsImg
   },
   {
     id: 'bracelets',
     label: 'Bracelets',
-    tagline: 'Bangles & cuffs',
+    tagline: 'Tennis bracelets & cuffs',
     href: '/shop/bracelets',
     image: braceletsImg
   }
@@ -55,7 +55,7 @@ export const CategoryShowcase: React.FC = () => {
         <ScrollReveal delay={0}>
           <div className="category-showcase__header">
             <div className="category-showcase__heading-group">
-              <span className="category-showcase__eyebrow">The Collection</span>
+              <span className="category-showcase__eyebrow">AZ JEWELRY Collection</span>
               <h2 className="category-showcase__title">Shop by Category</h2>
             </div>
             <Link to="/shop" className="category-showcase__view-all">
@@ -71,7 +71,7 @@ export const CategoryShowcase: React.FC = () => {
               <Link
                 to={cat.href}
                 className="category-showcase__card"
-                aria-label={`Shop ${cat.label}`}
+                aria-label={`Shop AZ JEWELRY ${cat.label}`}
               >
                 <span className="category-showcase__img-box">
                   <img

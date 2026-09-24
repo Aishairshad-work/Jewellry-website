@@ -3,48 +3,48 @@ import { ArrowRight, MessageCircle, Instagram, Facebook, Video, Check, Plus, X }
 import { ScrollReveal } from '../common/ScrollReveal';
 import { TrustStrip } from '../home/TrustStrip';
 import logo from '../../assets/Logo-transparent.png';
-import newsletterBg from '../../assets/Newsletter Bg.jpg';
+import newsletterBg from '../../assets/hero-neckless4.jpg';
 
 // Brand Configuration Constants
 const BRAND_CONFIG = {
-  WHATSAPP_URL: 'https://wa.me/923000000000?text=Hello%20Silver%20Haus%2C%20I%20would%20like%20to%20inquire%20about%20your%20jewellery%20collection.',
-  INSTAGRAM_URL: 'https://www.instagram.com/silvere_haus/',
-  FACEBOOK_URL: 'https://facebook.com/silverhausofficial',
-  TIKTOK_URL: 'https://tiktok.com/@silverhaus'
+  WHATSAPP_URL: 'https://wa.me/923000000000?text=Hello%20AZ%20JEWELRY%2C%20I%20would%20like%20to%20inquire%20about%20your%20lab%20grown%20diamond%20collection.',
+  INSTAGRAM_URL: 'https://www.instagram.com/azjewelryofficial/',
+  FACEBOOK_URL: 'https://facebook.com/azjewelryofficial',
+  TIKTOK_URL: 'https://tiktok.com/@azjewelry'
 };
 
 const shopLinks = [
-  { name: 'All Jewellery', href: '#shop' },
-  { name: 'Rings', href: '#rings' },
-  { name: 'Necklaces', href: '#necklaces' },
-  { name: 'Earrings', href: '#earrings' },
-  { name: 'Bracelets', href: '#bracelets' },
-  { name: 'New Arrivals', href: '#new-arrivals' },
-  { name: 'Best Sellers', href: '#best-sellers' },
+  { name: 'All Jewellery', href: '/shop' },
+  { name: 'Rings', href: '/shop/rings' },
+  { name: 'Necklaces', href: '/shop/necklaces' },
+  { name: 'Earrings', href: '/shop/earrings' },
+  { name: 'Bracelets', href: '/shop/bracelets' },
+  { name: 'New Arrivals', href: '/shop' },
+  { name: 'Best Sellers', href: '/shop' },
 ];
 
 const infoLinks = [
-  { name: 'About Silver Haus', href: '#about' },
-  { name: 'Our Story', href: '#our-story' },
-  { name: 'Contact Us', href: '#contact' },
-  { name: 'FAQs', href: '#faqs' },
-  { name: 'Shipping & Delivery', href: '#shipping' },
-  { name: 'Returns & Exchanges', href: '#returns' },
-  { name: 'Privacy Policy', href: '#privacy' },
-  { name: 'Terms & Conditions', href: '#terms' },
+  { name: 'About AZ JEWELRY', href: '/about' },
+  { name: 'Our Story', href: '/about' },
+  { name: 'Contact Us', href: '/about' },
+  { name: 'FAQs', href: '/about' },
+  { name: 'Shipping & Delivery', href: '/about' },
+  { name: 'Returns & Exchanges', href: '/about' },
+  { name: 'Privacy Policy', href: '/about' },
+  { name: 'Terms & Conditions', href: '/about' },
 ];
 
 const customerCareLinks = [
-  { name: 'Contact Us', href: '#contact' },
+  { name: 'Contact Us', href: '/about' },
   {
     name: 'WhatsApp Assistant',
     href: BRAND_CONFIG.WHATSAPP_URL,
     isExternal: true,
     icon: <MessageCircle size={15} className="footer-link__icon" />
   },
-  { name: 'Order Tracking', href: '#order-tracking' },
-  { name: 'Care Guide', href: '#care-guide' },
-  { name: 'Gift Cards', href: '#gift-cards' },
+  { name: 'Order Tracking', href: '/about' },
+  { name: 'Care Guide', href: '/about' },
+  { name: 'Gift Cards', href: '/about' },
 ];
 
 /* ── Mobile accordion helper ── */
@@ -84,15 +84,15 @@ const SocialsBlock: React.FC = () => (
     <span className="footer-socials__label">Connect</span>
     <div className="footer-socials__icons">
       <a href={BRAND_CONFIG.INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
-        className="social-btn" aria-label="Follow Silver Haus on Instagram">
+        className="social-btn" aria-label="Follow AZ JEWELRY on Instagram">
         <Instagram size={17} />
       </a>
       <a href={BRAND_CONFIG.FACEBOOK_URL} target="_blank" rel="noopener noreferrer"
-        className="social-btn" aria-label="Follow Silver Haus on Facebook">
+        className="social-btn" aria-label="Follow AZ JEWELRY on Facebook">
         <Facebook size={17} />
       </a>
       <a href={BRAND_CONFIG.TIKTOK_URL} target="_blank" rel="noopener noreferrer"
-        className="social-btn" aria-label="Follow Silver Haus on TikTok">
+        className="social-btn" aria-label="Follow AZ JEWELRY on TikTok">
         <Video size={17} />
       </a>
     </div>
@@ -154,12 +154,12 @@ export const Footer: React.FC = () => {
         <div className="container">
           <div className="newsletter-card">
             <div className="newsletter-card__content">
-              <span className="newsletter-card__eyebrow">PRIVATE ACCESS</span>
+              <span className="newsletter-card__eyebrow">AZ PRIVATE ACCESS</span>
               <h2 className="newsletter-card__title">
                 Shine in <span className="newsletter-card__title-italic">your</span> own way!
               </h2>
               <p className="newsletter-card__subtitle">
-                Jewelry that speaks your style. Receive first access to new arrivals, private releases and Silver Haus updates.
+                Certified lab-grown diamond jewellery crafted for your style. Receive first access to new arrivals, bespoke releases and AZ JEWELRY updates.
               </p>
               <form
                 className="newsletter-card__form"
@@ -169,7 +169,7 @@ export const Footer: React.FC = () => {
                 {isSubscribed ? (
                   <div className="newsletter-card__success" role="status">
                     <Check size={16} />
-                    <span>Welcome to Silver Haus Private Access.</span>
+                    <span>Welcome to AZ JEWELRY Private Access.</span>
                   </div>
                 ) : (
                   <div className="newsletter-card__input-pill">
@@ -191,7 +191,7 @@ export const Footer: React.FC = () => {
             </div>
             <div className="newsletter-card__visual">
               <div className="newsletter-card__img-frame">
-                <img src={newsletterBg} alt="Silver Haus Luxury Jewelry Collection" className="newsletter-card__img" />
+                <img src={newsletterBg} alt="AZ JEWELRY Luxury Lab Grown Diamond Collection" className="newsletter-card__img" />
               </div>
             </div>
           </div>
@@ -216,12 +216,12 @@ export const Footer: React.FC = () => {
               {/* Col 1 — Brand */}
               <ScrollReveal delay={0}>
                 <div className="footer-col footer-col--brand">
-                  <a href="/" aria-label="Silver Haus Home" className="footer-logo__wrapper">
-                    <img src={logo} alt="Silver Haus Luxury Jewellery" className="footer-logo" />
+                  <a href="/" aria-label="AZ JEWELRY Home" className="footer-logo__wrapper">
+                    <img src={logo} alt="AZ JEWELRY — Lab Grown Diamonds" className="footer-logo" />
                   </a>
-                  <p className="footer-brand__tagline">"Jewellery, refined for you."</p>
+                  <p className="footer-brand__tagline">"LAB GROWN DIAMONDS"</p>
                   <p className="footer-brand__description">
-                    Timeless pieces, thoughtfully curated for the moments worth remembering.
+                    Certified, sustainable lab-grown diamond jewellery, thoughtfully curated for moments worth remembering.
                   </p>
                   <div className="footer-brand__location">
                     <span>Zaibunnisa Street, Saddar, Karachi, Pakistan</span>
@@ -290,12 +290,12 @@ export const Footer: React.FC = () => {
 
               {/* Brand block */}
               <div className="footer-mobile-brand">
-                <a href="/" aria-label="Silver Haus Home" className="footer-logo__wrapper">
-                  <img src={logo} alt="Silver Haus Luxury Jewellery" className="footer-logo footer-logo--mobile" />
+                <a href="/" aria-label="AZ JEWELRY Home" className="footer-logo__wrapper">
+                  <img src={logo} alt="AZ JEWELRY — Lab Grown Diamonds" className="footer-logo footer-logo--mobile" />
                 </a>
-                <p className="footer-brand__tagline">"Jewellery, refined for you."</p>
+                <p className="footer-brand__tagline">"LAB GROWN DIAMONDS"</p>
                 <p className="footer-brand__description">
-                  Timeless pieces, thoughtfully curated for the moments worth remembering.
+                  Certified, sustainable lab-grown diamond jewellery, thoughtfully curated for moments worth remembering.
                 </p>
                 <SocialsBlock />
               </div>
@@ -344,7 +344,7 @@ export const Footer: React.FC = () => {
               {/* Accordion: Newsletter Signup */}
               <AccordionSection title="Newsletter Signup">
                 <p className="footer-nl__desc">
-                  Receive first access to new arrivals, private releases and Silver Haus updates.
+                  Receive first access to new arrivals, private releases and AZ JEWELRY updates.
                 </p>
                 <NewsletterForm
                   email={email}
@@ -365,7 +365,7 @@ export const Footer: React.FC = () => {
             <div className="container">
               <div className="site-footer__bottom-inner">
                 <div className="site-footer__copyright">
-                  <p>© 2026 Silver Haus. All rights reserved.</p>
+                  <p>© 2026 AZ JEWELRY. All rights reserved.</p>
                 </div>
                 <div className="site-footer__legal-links">
                   <a href="#privacy" className="legal-link">Privacy Policy</a>

@@ -10,6 +10,7 @@ import { Breadcrumbs } from '../components/shop/Breadcrumbs';
 import { ProductCard } from '../components/shop/ProductCard';
 import { PRODUCTS, formatPKR } from '../data/products';
 import { useShop } from '../context/ShopContext';
+import { DiamondMagnifier } from '../components/common/DiamondMagnifier';
 
 export const ProductDetailPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -89,7 +90,7 @@ export const ProductDetailPage: React.FC = () => {
                     {product.badge}
                   </span>
                 )}
-                <img
+                <DiamondMagnifier
                   src={images[selectedImageIdx]}
                   alt={product.name}
                   className="pdp__main-image"
@@ -200,8 +201,8 @@ export const ProductDetailPage: React.FC = () => {
                 <div className="pdp__perk-item">
                   <ShieldCheck size={18} className="perk-icon" />
                   <div>
-                    <strong>Silver Haus Guarantee</strong>
-                    <span>Certified hallmarked metal with lifetime authenticity.</span>
+                    <strong>AZ JEWELRY Guarantee</strong>
+                    <span>Certified lab-grown diamonds with lifetime authenticity.</span>
                   </div>
                 </div>
 

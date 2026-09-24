@@ -134,8 +134,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
 
           {/* ── Logo Center ── */}
           <div className="navbar__logo-wrapper">
-            <Link to="/" aria-label="Silver Haus Home" className="navbar__logo-link">
-              <img src={logo} alt="Silver Haus" className="navbar__logo" />
+            <Link to="/" aria-label="AZ JEWELRY Home" className="navbar__logo-link">
+              <img src={logo} alt="AZ JEWELRY — Lab Grown Diamonds" className="navbar__logo" />
             </Link>
           </div>
 

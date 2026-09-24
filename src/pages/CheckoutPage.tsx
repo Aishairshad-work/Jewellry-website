@@ -36,7 +36,7 @@ export const CheckoutPage: React.FC = () => {
     e.preventDefault();
     if (cart.length === 0) return;
 
-    const generatedOrderNo = `SH-${Math.floor(100000 + Math.random() * 900000)}`;
+    const generatedOrderNo = `AZ-${Math.floor(100000 + Math.random() * 900000)}`;
     setOrderNumber(generatedOrderNo);
     setIsSubmitted(true);
     clearCart();
@@ -53,7 +53,7 @@ export const CheckoutPage: React.FC = () => {
           <span className="success-eyebrow">ORDER CONFIRMED</span>
           <h1 className="success-title">Thank You, {formData.fullName || 'Valued Customer'}!</h1>
           <p className="success-message">
-            Your Silver Haus jewellery order <strong>#{orderNumber}</strong> has been successfully placed.
+            Your AZ JEWELRY order <strong>#{orderNumber}</strong> has been successfully placed.
           </p>
 
           <div className="success-details-box">
@@ -86,7 +86,7 @@ export const CheckoutPage: React.FC = () => {
           </div>
 
           <p className="success-note">
-            A confirmation SMS & email have been dispatched to your contact details. Our team in Saddar, Karachi is dispatching your order.
+            A confirmation SMS & email have been dispatched to your contact details. Our team in Saddar, Karachi is preparing your parcel.
           </p>
 
           <button
@@ -106,7 +106,7 @@ export const CheckoutPage: React.FC = () => {
       <div className="page-wrapper">
         <div className="checkout-header container">
           <Link to="/" className="checkout-logo">
-            <img src={logo} alt="Silver Haus" className="checkout-logo__img" />
+            <img src={logo} alt="AZ JEWELRY" className="checkout-logo__img" />
           </Link>
         </div>
         <div className="container" style={{ margin: '5rem auto', textAlign: 'center', maxWidth: 500 }}>
@@ -130,7 +130,7 @@ export const CheckoutPage: React.FC = () => {
         </Link>
 
         <Link to="/" className="checkout-logo">
-          <img src={logo} alt="Silver Haus" className="checkout-logo__img" />
+          <img src={logo} alt="AZ JEWELRY" className="checkout-logo__img" />
         </Link>
 
         <div className="checkout-security-badge">
@@ -273,7 +273,7 @@ export const CheckoutPage: React.FC = () => {
                 <Building2 size={20} className="payment-icon" />
                 <div className="payment-label-text">
                   <strong>Direct Bank Transfer (Meezan / HBL / Alfalah)</strong>
-                  <span>Transfer directly to Silver Haus account. Account details sent via SMS.</span>
+                  <span>Transfer directly to AZ JEWELRY account. Account details sent via SMS.</span>
                 </div>
               </label>
 
@@ -335,7 +335,7 @@ export const CheckoutPage: React.FC = () => {
           <div className="checkout-guarantees">
             <div className="guarantee-item">
               <ShieldCheck size={16} />
-              <span>Authentic 925 Silver & 18k Gold Finish</span>
+              <span>Certified Lab-Grown Diamonds & 18k Gold Finish</span>
             </div>
             <div className="guarantee-item">
               <Truck size={16} />

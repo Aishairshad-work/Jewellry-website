@@ -73,7 +73,7 @@ const trustItems: TrustItem[] = [
 
 export const TrustStrip: React.FC = () => {
   return (
-    <section className="trust-strip" aria-label="Why shop with Silver Haus">
+    <section className="trust-strip" aria-label="Why shop with AZ JEWELRY">
       <div className="container">
         <div className="trust-strip__grid">
           {trustItems.map((item, index) => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
+import { X, Plus, Minus, Trash2, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react';
 import { useShop } from '../../context/ShopContext';
 import { formatPKR } from '../../data/products';
 import { useNavigate } from 'react-router-dom';
@@ -46,14 +46,19 @@ export const CartDrawer: React.FC = () => {
 
         {/* Free Shipping Progress Indicator */}
         <div className="cart-drawer__shipping-bar">
-          <p className="cart-drawer__shipping-text">
-            {remainingForFreeShipping > 0
-              ? `Add ${formatPKR(remainingForFreeShipping)} more to qualify for FREE express shipping in Pakistan.`
-              : '🎉 You qualify for FREE express delivery across Pakistan!'}
+          <p className="cart-drawer__shipping-text" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            {remainingForFreeShipping > 0 ? (
+              <span>Add <strong>{formatPKR(remainingForFreeShipping)}</strong> more for FREE express shipping in Pakistan.</span>
+            ) : (
+              <span style={{ color: 'var(--color-warm-brown)', fontWeight: 600 }}>
+                <Sparkles size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} />
+                You've unlocked FREE Insured Express Delivery across Pakistan!
+              </span>
+            )}
           </p>
           <div className="cart-drawer__progress-track">
             <div
-              className="cart-drawer__progress-fill"
+              className={`cart-drawer__progress-fill ${shippingProgress >= 100 ? 'unlocked' : ''}`}
               style={{ width: `${shippingProgress}%` }}
             />
           </div>
