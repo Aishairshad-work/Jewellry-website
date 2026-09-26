@@ -9,6 +9,8 @@ import productNecklace3 from '../assets/product-neckless3.jpg';
 import heroBracelet from '../assets/hero-brecelet.jpg';
 import heroSet from '../assets/hero-set.jpg';
 import heroSet2 from '../assets/hero-set2.jpg';
+import braceletWovenGold from '../assets/bracelet-woven-gold.jpg';
+import braceletElegantDiamond from '../assets/bracelet-elegant-diamond.jpg';
 
 export interface Product {
   id: string;
@@ -143,8 +145,8 @@ export const PRODUCTS: Product[] = [
     category: 'rings',
     categoryLabel: 'Rings',
     price: 36800,
-    image: productRing,
-    galleryImages: [productRing, heroRing],
+    image: heroSet2,
+    galleryImages: [heroSet2, productRing, heroRing],
     material: 'Rhodium Silver',
     style: 'Minimal',
     inStock: true,
@@ -321,8 +323,8 @@ export const PRODUCTS: Product[] = [
     category: 'bracelets',
     categoryLabel: 'Bracelets',
     price: 69800,
-    image: heroBracelet,
-    galleryImages: [heroBracelet, heroSet2],
+    image: braceletWovenGold,
+    galleryImages: [braceletWovenGold, heroBracelet, heroSet2],
     badge: 'NEW IN',
     badgeType: 'new',
     material: '18k Gold',
@@ -343,8 +345,8 @@ export const PRODUCTS: Product[] = [
     category: 'bracelets',
     categoryLabel: 'Bracelets',
     price: 39600,
-    image: heroBracelet,
-    galleryImages: [heroBracelet, productRing],
+    image: braceletElegantDiamond,
+    galleryImages: [braceletElegantDiamond, heroBracelet, productRing],
     material: 'Rhodium Silver',
     style: 'Minimal',
     inStock: true,

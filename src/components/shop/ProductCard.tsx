@@ -43,8 +43,11 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             aria-label={isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
             type="button"
           >
-            <Heart size={16} fill={isWishlisted ? '#7B5D42' : 'none'} color="#7B5D42" />
+            <Heart size={16} fill={isWishlisted ? 'var(--color-champagne-beige)' : 'none'} color="var(--color-champagne-beige)" />
           </button>
+
+          {/* Subtle Luxury Sparkle Accent */}
+          <span className="product-card__floral-sparkle" aria-hidden="true">✦</span>
 
           {/* Optional Badge */}
           {product.badge && (
@@ -64,7 +67,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           {/* Flying Sparkle Burst Feedback */}
           {showSparklePop && (
             <div className="az-sparkle-burst" aria-hidden="true">
-              <Sparkles size={28} color="#D8C6A0" />
+              <Sparkles size={28} color="var(--color-champagne-beige)" />
             </div>
           )}
 

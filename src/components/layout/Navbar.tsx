@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, Heart, User, ShoppingBag, Menu, X, ChevronDown } from 'lucide-react';
 import { useShop } from '../../context/ShopContext';
-import logo from '../../assets/Logo-black.png';
+import logo from '../../assets/logo-az-gold.png';
 
 interface NavbarProps {
   onOpenMobileMenu: () => void;
@@ -10,9 +10,9 @@ interface NavbarProps {
 
 const shopCategories = [
   { name: 'Rings',     href: '/shop/rings' },
-  { name: 'Bracelets', href: '/shop/bracelets' },
-  { name: 'Necklaces', href: '/shop/necklaces' },
   { name: 'Earrings',  href: '/shop/earrings' },
+  { name: 'Bracelets', href: '/shop/bracelets' },
+  { name: 'Pendants',  href: '/shop/necklaces' },
 ];
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
@@ -147,16 +147,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
               type="button"
               onClick={() => setIsSearchOpen(true)}
             >
-              <Search size={19} />
+              <Search size={22} strokeWidth={1.75} />
             </button>
 
             <Link to="/shop" className="icon-btn hide-mobile" aria-label="View Wishlist">
-              <Heart size={19} />
+              <Heart size={22} strokeWidth={1.75} />
               {wishlist.length > 0 && <span className="icon-btn__badge">{wishlist.length}</span>}
             </Link>
 
             <button className="icon-btn hide-mobile" aria-label="Account Login" type="button">
-              <User size={19} />
+              <User size={22} strokeWidth={1.75} />
             </button>
 
             <button
@@ -165,7 +165,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
               type="button"
               onClick={openCartDrawer}
             >
-              <ShoppingBag size={19} />
+              <ShoppingBag size={22} strokeWidth={1.75} />
               {cartCount > 0 && <span className="icon-btn__badge">{cartCount}</span>}
             </button>
           </div>

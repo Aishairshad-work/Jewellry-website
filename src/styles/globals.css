@@ -1,4 +1,5 @@
 @import './variables.css';
+@import './floral-theme.css';
 
 /* Global Reset & Base Box Sizing */
 *, *::before, *::after {
@@ -22,6 +23,7 @@ html {
 body {
   min-height: 100vh;
   background-color: var(--bg-primary);
+  background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F0F6FC 35%, #E5EFF8 75%, #DCEDF9 100%);
   color: var(--text-primary);
   line-height: 1.5;
   overflow-x: hidden;

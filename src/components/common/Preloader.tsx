@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import logo from '../../assets/Logo-black.png';
+import logo from '../../assets/logo-az-gold.png';
 
 /**
  * AZ JEWELRY Preloader

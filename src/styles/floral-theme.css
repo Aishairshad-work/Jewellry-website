@@ -1,0 +1,1472 @@
+/* ==========================================================================
+   AZ JEWELRY — SECTION-BASED FLORAL LUXURY THEME
+   Strict Corner-Based Luxury Compositions (References 1 & 2)
+   
+   IMPORTANT:
+   - ALL floral elements, petals, and sparkles belong to their respective SECTIONS.
+   - ZERO position: fixed or position: sticky on decorative elements.
+   - Everything scrolls naturally with page content.
+   - Strict CORNER CLUSTERS only — NO tall vertical side borders or side strips.
+   - Proper z-index layering: decorations never cover text, inputs, buttons, or model photos.
+   - pointer-events: none on all decorative items for flawless user interaction.
+   ========================================================================== */
+
+/* ── Base Page Atmosphere ── */
+.page-wrapper {
+  position: relative;
+  overflow-x: clip;
+  background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F0F6FC 35%, #E5EFF8 75%, #DCEDF9 100%);
+  min-height: 100vh;
+}
+
+/* Ensure all sections provide a relative positioning context and clip horizontal overflow */
+.hero,
+.category-showcase,
+.featured-banners,
+.product-showcase,
+.testimonials-section,
+.newsletter-section,
+.site-footer {
+  position: relative;
+  overflow-x: clip;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   1. SECTION-BASED FLOATING PETALS (Gentle breeze animation)
+   ────────────────────────────────────────────────────────────────────────── */
+.section-petal {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  z-index: 3;
+  filter: drop-shadow(0 6px 12px rgba(16, 42, 67, 0.08));
+}
+
+.petal-blue {
+  background-image: url('../assets/floral-petal-blue.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.petal-white {
+  background-image: url('../assets/floral-petal-white.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Petal Keyframe Variations */
+.petal-anim-1 {
+  animation: petalFloat1 13s ease-in-out infinite alternate;
+}
+.petal-anim-2 {
+  animation: petalFloat2 17s ease-in-out infinite alternate;
+}
+.petal-anim-3 {
+  animation: petalFloat3 15s ease-in-out infinite alternate;
+}
+.petal-anim-4 {
+  animation: petalFloat1 19s ease-in-out infinite alternate-reverse;
+}
+.petal-anim-5 {
+  animation: petalFloat2 21s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes petalFloat1 {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(-26px) translateX(16px) rotate(32deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(10px) translateX(-10px) rotate(-14deg);
+    opacity: 0.75;
+  }
+}
+
+@keyframes petalFloat2 {
+  0% {
+    transform: translateY(0) translateX(0) rotate(18deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(28px) translateX(-20px) rotate(-28deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-12px) translateX(10px) rotate(8deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes petalFloat3 {
+  0% {
+    transform: translateY(0) translateX(0) rotate(-16deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(-30px) translateX(-14px) rotate(26deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(14px) translateX(18px) rotate(-4deg);
+    opacity: 0.75;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2. SECTION-BASED DIAMOND SPARKLES
+   ────────────────────────────────────────────────────────────────────────── */
+.section-sparkle {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  color: var(--color-champagne-beige);
+  font-family: var(--font-serif);
+  line-height: 1;
+  z-index: 3;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(197, 160, 89, 0.6);
+}
+
+.sparkle-anim-1 {
+  animation: sparkleTwinkle 3.8s ease-in-out infinite;
+}
+.sparkle-anim-2 {
+  animation: sparkleTwinkle 4.5s ease-in-out 1.2s infinite;
+}
+.sparkle-anim-3 {
+  animation: sparkleTwinkle 5.2s ease-in-out 2.1s infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(0.65) rotate(0deg);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.25) rotate(22deg);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   3. HERO SECTION — LUXURY TOP CORNER BOUQUETS (NO TALL SIDE BORDERS)
+   ────────────────────────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__floral-corner-tl {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 340px;
+  height: 340px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 12px 28px rgba(16, 42, 67, 0.1));
+  animation: floralSwayTL 12s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+.hero__floral-corner-tr {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 340px;
+  height: 340px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  transform: scaleX(-1);
+  transform-origin: center center;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 12px 28px rgba(16, 42, 67, 0.1));
+  animation: floralSwayTR 14s ease-in-out infinite alternate;
+}
+
+.hero__floral-left,
+.hero__floral-right {
+  display: none !important;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero__gallery-container {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes floralSwayTL {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(0.8deg) scale(1.02) translate(3px, 2px); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes floralSwayTR {
+  0% { transform: scaleX(-1) rotate(0deg) scale(1); }
+  50% { transform: scaleX(-1) rotate(-0.8deg) scale(1.02) translate(3px, 2px); }
+  100% { transform: scaleX(-1) rotate(0deg) scale(1); }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   NAVBAR LOGO — VISIBLY LARGER, PROPORTIONED & PERFECTLY CENTERED
+   ────────────────────────────────────────────────────────────────────────── */
+.navbar__logo {
+  height: 62px !important;
+  max-height: 62px !important;
+  transition: height 250ms ease, transform 250ms ease, filter 250ms ease !important;
+}
+
+.navbar--scrolled .navbar__logo {
+  height: 54px !important;
+  max-height: 54px !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   NAVBAR UTILITY ICONS — VISIBLY LARGER, REFINED & BALANCED
+   ────────────────────────────────────────────────────────────────────────── */
+.navbar__utility-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+}
+
+.navbar__utility-right .icon-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  color: inherit;
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+.navbar__utility-right .icon-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+  transition: transform 250ms ease, stroke 200ms ease;
+}
+
+.navbar__utility-right .icon-btn:hover {
+  transform: translateY(-1px);
+}
+
+.navbar__utility-right .icon-btn:hover svg {
+  transform: scale(1.08);
+}
+
+.navbar__utility-right .icon-btn__badge {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  background-color: var(--color-champagne-beige);
+  color: var(--color-deep-espresso);
+  font-size: 0.62rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.navbar__mobile-toggle .icon-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__mobile-toggle .icon-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   4. SHOP BY CATEGORY SECTION (REFINED TYPOGRAPHY & SPACIOUS LUXURY)
+   ────────────────────────────────────────────────────────────────────────── */
+.category-showcase {
+  position: relative;
+  z-index: 1;
+}
+
+.category-showcase__floral-left,
+.category-showcase__floral-right {
+  display: none !important;
+}
+
+.category-showcase .container {
+  position: relative;
+  z-index: 2;
+}
+
+.category-showcase__grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.75rem !important;
+  align-items: stretch !important;
+}
+
+.category-showcase__card {
+  background: rgba(255, 255, 255, 0.96) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(197, 160, 89, 0.35) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.07) !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 400ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease !important;
+}
+
+.category-showcase__card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 22px 50px rgba(16, 42, 67, 0.16) !important;
+  border-color: rgba(197, 160, 89, 0.75) !important;
+}
+
+.category-showcase__img-box {
+  border-radius: 14px 14px 0 0 !important;
+  overflow: hidden !important;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.18) !important;
+}
+
+.category-showcase__img {
+  transition: transform 650ms cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.category-showcase__card:hover .category-showcase__img {
+  transform: scale(1.06) !important;
+}
+
+/* Text block below the image — generous vertical and horizontal breathing room */
+.category-showcase__info {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.25rem 1.15rem 1.4rem 1.15rem !important;
+  flex: 1 !important;
+  background: #FFFFFF !important;
+}
+
+/* Card Title */
+.category-showcase__name {
+  font-family: var(--font-serif) !important;
+  font-weight: 500 !important;
+  font-size: clamp(1.15rem, 1.25vw, 1.3rem) !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.03em !important;
+  color: #102A43 !important;
+  margin-bottom: 0.4rem !important;
+  display: block !important;
+  transition: color 250ms ease !important;
+}
+
+.category-showcase__card:hover .category-showcase__name {
+  color: #8C6D37 !important;
+}
+
+/* Card Description */
+.category-showcase__tagline {
+  font-family: var(--font-sans) !important;
+  font-weight: 300 !important;
+  font-size: 0.82rem !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.015em !important;
+  color: #486581 !important;
+  margin-bottom: 1.15rem !important;
+  display: block !important;
+  min-height: 2.4em !important;
+}
+
+/* Action link: SHOP NOW → */
+.category-showcase__cta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  align-self: flex-start !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #102A43 !important;
+  padding-bottom: 0.3rem !important;
+  border-bottom: 1.5px solid rgba(197, 160, 89, 0.45) !important;
+  margin-top: auto !important;
+  transition: color 200ms ease, border-color 200ms ease, gap 200ms ease !important;
+}
+
+.category-showcase__card:hover .category-showcase__cta {
+  color: #8C6D37 !important;
+  border-color: #8C6D37 !important;
+  gap: 0.65rem !important;
+}
+
+/* Action Arrow Icon */
+.category-showcase__cta-icon {
+  width: 15px !important;
+  height: 15px !important;
+  transition: transform 250ms ease !important;
+  flex-shrink: 0 !important;
+}
+
+.category-showcase__card:hover .category-showcase__cta-icon {
+  transform: translateX(4px) !important;
+}
+
+.category-showcase__view-all-icon {
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.category-showcase__view-all:hover .category-showcase__view-all-icon {
+  transform: translate(3px, -3px) !important;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   5. CURATED COLLECTIONS SECTION (Reference 2 Inspiration)
+   - Large premium rounded outer card container with soft cream/white surface
+   - Outer refined thin gold outline with top center diamond sparkle
+   - Inner arched image container (Roman arch shape)
+   - Centered diamond sparkle divider line and editorial text overlay
+   - Bottom action area with gold sparkle divider line and circular arrow button
+   - Corner floral accents peeking naturally behind/at the card edges
+   ────────────────────────────────────────────────────────────────────────── */
+.featured-banners {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 0;
+}
+
+.featured-banners__floral-left,
+.featured-banners__floral-right {
+  display: none !important;
+}
+
+.featured-banners .container {
+  position: relative;
+  z-index: 2;
+}
+
+.featured-banners__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+/* Outer Card Container */
+.banner-card-outer {
+  position: relative;
+  border-radius: 40px 40px 28px 28px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(197, 160, 89, 0.45);
+  box-shadow: 0 16px 45px rgba(16, 42, 67, 0.09);
+  padding: 22px 22px 28px 22px;
+  transition: transform 450ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 450ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease;
+}
+
+.banner-card-outer:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(16, 42, 67, 0.16);
+  border-color: rgba(197, 160, 89, 0.75);
+}
+
+/* Top Center Sparkle on outer border (Reference 2) */
+.banner-card__top-sparkle {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  padding: 0 12px;
+  z-index: 4;
+}
+
+.banner-card__top-sparkle .sparkle-gem {
+  font-size: 15px;
+  color: #C5A059;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+}
+
+.banner-card__top-sparkle .sparkle-line {
+  display: none;
+}
+
+/* Corner Floral Accent on Collections Cards */
+.banner-card__floral-corner {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 6px 16px rgba(16, 42, 67, 0.15));
+  opacity: 0.85;
+  transition: transform 450ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.banner-card__floral-corner--tl {
+  top: -18px;
+  left: -20px;
+}
+
+.banner-card__floral-corner--tr {
+  top: -18px;
+  right: -20px;
+  transform: scaleX(-1);
+}
+
+.banner-card-outer:hover .banner-card__floral-corner--tl {
+  transform: scale(1.05) translate(-2px, -2px);
+}
+
+.banner-card-outer:hover .banner-card__floral-corner--tr {
+  transform: scaleX(-1) scale(1.05) translate(-2px, -2px);
+}
+
+/* Inner Link & Structure */
+.banner-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  aspect-ratio: auto !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* Inner Arched Image Container (Roman Arch shape) */
+.banner-card__arched-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: 260px 260px 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.banner-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 700ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.banner-card-outer:hover .banner-card__img {
+  transform: scale(1.06);
+}
+
+.banner-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(16, 42, 67, 0.15) 0%,
+    rgba(16, 42, 67, 0.28) 45%,
+    rgba(16, 42, 67, 0.72) 100%
+  );
+  transition: background 400ms ease;
+}
+
+.banner-card-outer:hover .banner-card__overlay {
+  background: linear-gradient(180deg,
+    rgba(16, 42, 67, 0.12) 0%,
+    rgba(16, 42, 67, 0.25) 45%,
+    rgba(16, 42, 67, 0.78) 100%
+  );
+}
+
+/* Editorial Content Overlay within Arch */
+.banner-card__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2.2rem 1.8rem 2.8rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.banner-card__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #E8D5B5;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.banner-card__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  line-height: 1.1;
+}
+
+/* Center Sparkle Divider Line */
+.banner-card__sparkle-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0.5rem 0 0.85rem;
+  width: 100%;
+}
+
+.banner-card__sparkle-divider .sparkle-bar {
+  width: 36px;
+  height: 1px;
+  background: rgba(232, 213, 181, 0.65);
+}
+
+.banner-card__sparkle-divider .sparkle-icon {
+  font-size: 13px;
+  color: #E8D5B5;
+  line-height: 1;
+}
+
+.banner-card__subtitle {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* Bottom Card Action Area */
+.banner-card__bottom-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.banner-card__bottom-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.banner-card__bottom-divider .divider-line {
+  width: 70px;
+  height: 1px;
+  background: rgba(197, 160, 89, 0.35);
+}
+
+.banner-card__bottom-divider .divider-gem {
+  font-size: 12px;
+  color: #C5A059;
+  line-height: 1;
+}
+
+.banner-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.banner-card__cta-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.2px solid #C5A059;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C5A059;
+  background: transparent;
+  transition: all 300ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.banner-card-outer:hover .banner-card__cta-btn {
+  background: #C5A059;
+  color: #FFFFFF;
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35);
+}
+
+.banner-card__cta-label {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #C5A059;
+  transition: color 250ms ease;
+}
+
+.banner-card-outer:hover .banner-card__cta-label {
+  color: #102A43;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   6. FEATURED CREATIONS SECTION (CLEAN SIDES + PRODUCT CARD LIFT)
+   ────────────────────────────────────────────────────────────────────────── */
+.product-showcase {
+  position: relative;
+  z-index: 1;
+}
+
+.product-showcase__floral-left,
+.product-showcase__floral-right {
+  display: none !important;
+}
+
+.product-showcase .container {
+  position: relative;
+  z-index: 2;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 160, 89, 0.28) !important;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.07) !important;
+  position: relative;
+  transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 400ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease !important;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(16, 42, 67, 0.15) !important;
+  border-color: rgba(197, 160, 89, 0.55) !important;
+}
+
+.product-card__image-wrapper img,
+.product-card__img {
+  transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-card:hover .product-card__image-wrapper img,
+.product-card:hover .product-card__img {
+  transform: scale(1.06);
+}
+
+.product-card__floral-sparkle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 16px;
+  color: var(--color-champagne-beige);
+  opacity: 0;
+  transform: scale(0.6) rotate(0deg);
+  transition: opacity 300ms ease, transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 6;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.product-card:hover .product-card__floral-sparkle {
+  opacity: 1;
+  transform: scale(1.3) rotate(25deg);
+}
+
+/* Button & Link Hover Animations */
+.discover-products-btn__icon,
+.btn-icon,
+.btn svg,
+.btn-primary svg {
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.discover-products-btn:hover .discover-products-btn__icon,
+.btn:hover .btn-icon,
+.btn:hover svg,
+.btn-primary:hover svg {
+  transform: translateX(5px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   7. CUSTOMER STORIES / TESTIMONIALS SECTION (Reference 1 Inspiration)
+   - Tall elegant vertical cards
+   - Arched top image area
+   - Circular quotation-mark badge overlapping the seam
+   - Elegant gold stars
+   - Clean review text
+   - Circular customer initials avatar + Name & Location
+   - Small elegant gold decorative line near bottom
+   - Featured card top arch crest ornament
+   - Reference 1 horizontal line pagination indicator
+   ────────────────────────────────────────────────────────────────────────── */
+.testimonials-section {
+  position: relative;
+  z-index: 1;
+  padding: 3.5rem 0;
+}
+
+.testimonials__floral-side-left,
+.testimonials__floral-side-right {
+  display: none !important;
+}
+
+.testimonials-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.testimonials__curved-backdrop {
+  position: relative;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(197, 160, 89, 0.35) !important;
+  box-shadow: 0 16px 50px rgba(16, 42, 67, 0.08) !important;
+  border-radius: 36px;
+  padding: 3rem 2.5rem 2.5rem;
+}
+
+.testimonials__floral-corner-left {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 150px;
+  height: 150px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 8px 20px rgba(16, 42, 67, 0.12));
+}
+
+.testimonials__floral-corner-right {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 150px;
+  height: 150px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 8px 20px rgba(16, 42, 67, 0.12));
+}
+
+.testimonials__carousel-wrapper {
+  overflow: visible;
+  position: relative;
+  width: 100%;
+}
+
+.testimonials__grid-all,
+.testimonials__track {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2.25rem 1.65rem !important;
+}
+
+/* Individual Testimonial Card (Reference 1) */
+.testimonial-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(197, 160, 89, 0.38) !important;
+  border-radius: 120px 120px 24px 24px;
+  padding: 12px 12px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 35px rgba(16, 42, 67, 0.07) !important;
+  transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 400ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease !important;
+  animation: testimonialFadeIn 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 480px;
+}
+
+@keyframes testimonialFadeIn {
+  0% {
+    opacity: 0.75;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(197, 160, 89, 0.7) !important;
+  box-shadow: 0 20px 48px rgba(16, 42, 67, 0.13) !important;
+}
+
+/* Featured Card with Gold Arch Peak (Card 2 in Reference 1) */
+.testimonial-card--featured {
+  border-color: rgba(197, 160, 89, 0.65) !important;
+  box-shadow: 0 16px 42px rgba(197, 160, 89, 0.15) !important;
+}
+
+.testimonial-card__crest {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid #C5A059;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  box-shadow: 0 2px 8px rgba(197, 160, 89, 0.25);
+}
+
+.testimonial-card__crest-icon {
+  font-size: 11px;
+  color: #C5A059;
+  line-height: 1;
+}
+
+/* Top Arched Image Area */
+.testimonial-card__image-container {
+  width: 100%;
+  height: 190px;
+  border-radius: 110px 110px 16px 16px;
+  overflow: hidden;
+  position: relative;
+  background: #EBF3FA;
+}
+
+.testimonial-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.testimonial-card:hover .testimonial-card__img {
+  transform: scale(1.05);
+}
+
+/* Circular Quotation Badge (Reference 1) */
+.testimonial-card__quote-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FAF6EE;
+  border: 1px solid rgba(197, 160, 89, 0.45);
+  box-shadow: 0 4px 12px rgba(16, 42, 67, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: -22px auto 14px;
+  position: relative;
+  z-index: 3;
+}
+
+.testimonial-card__quote-mark {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: #C5A059;
+  line-height: 1;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* Content Area */
+.testimonial-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0 10px;
+}
+
+/* 5 Gold Stars */
+.testimonial-card__stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 12px;
+  color: #C5A059;
+}
+
+.testimonial-card__stars .star-icon {
+  color: #C5A059;
+}
+
+/* Review Text */
+.testimonial-card__quote {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #334E68;
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+/* Author Section */
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.testimonial-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #EAE3D2;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+  color: #102A43;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.testimonial-card__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card__name {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #102A43;
+  margin-bottom: 2px;
+  line-height: 1.2;
+}
+
+.testimonial-card__location {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: #7B8A97;
+  letter-spacing: 0.02em;
+}
+
+/* Small Elegant Gold Decorative Line Near Bottom (Reference 1) */
+.testimonial-card__bottom-line {
+  width: 38px;
+  height: 1.5px;
+  background: rgba(197, 160, 89, 0.45);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* Bottom Luxury Divider Line (All 6 Cards in Front) */
+.testimonials__bottom-divider {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  margin-top: 2.75rem !important;
+  width: 100% !important;
+}
+
+.testimonials__bottom-divider .divider-line {
+  height: 1px;
+  width: 90px;
+  background: rgba(197, 160, 89, 0.4);
+}
+
+.testimonials__bottom-divider .divider-gem {
+  font-size: 14px;
+  color: #C5A059;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   8. NEWSLETTER / PRIVATE ACCESS SECTION
+   Accurately Anchored Card Corners (Screenshot 1 Correction)
+   - Bottom-left flower anchored snugly to bottom-left corner of the card.
+   - Top-right flower anchored snugly to top-right corner of the card.
+   - Flowers NEVER cover text, input pill, button, or model image.
+   ────────────────────────────────────────────────────────────────────────── */
+.newsletter-section {
+  position: relative;
+  z-index: 1;
+  padding: 2.5rem 0 3.5rem;
+}
+
+.newsletter-card {
+  position: relative;
+  overflow: visible !important;
+  box-shadow: 0 20px 60px rgba(13, 30, 47, 0.35) !important;
+}
+
+/* Bottom-left corner: hugs card corner, behind text & input */
+.newsletter-card__floral-left {
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  width: 170px;
+  height: 170px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transform: scaleY(-1);
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.3));
+}
+
+/* Top-right corner: hugs card corner, behind model image frame */
+.newsletter-card__floral-right {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 170px;
+  height: 170px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  transform: scaleX(-1);
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.3));
+}
+
+/* Content layer sits comfortably on top of bottom-left floral corner */
+.newsletter-card__content {
+  position: relative;
+  z-index: 5;
+}
+
+/* Model image layer sits comfortably on top of top-right floral corner */
+.newsletter-card__visual {
+  position: relative;
+  z-index: 4;
+}
+
+.newsletter-card__img-frame {
+  position: relative;
+  z-index: 4;
+}
+
+.newsletter-card__action-btn svg {
+  transition: transform 300ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.newsletter-card__action-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   9. FOOTER SECTION — ELEGANT TOP CORNER CLUSTERS
+   - REMOVED bottom corner flowers.
+   - Tucked deeper into the upper corners of the frame (as marked).
+   - Clean, readable, and balanced layout.
+   ────────────────────────────────────────────────────────────────────────── */
+.site-footer {
+  position: relative;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+  z-index: 1;
+}
+
+/* Completely remove tall vertical side borders and bottom corner flowers */
+.site-footer__floral-left,
+.site-footer__floral-right,
+.site-footer__floral-corner-bl,
+.site-footer__floral-corner-br {
+  display: none !important;
+}
+
+/* Top-left corner floral cluster (tucked into the top-left frame corner) */
+.site-footer__floral-corner-tl {
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  width: 205px;
+  height: 205px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
+}
+
+/* Top-right corner floral cluster (tucked into the top-right frame corner) */
+.site-footer__floral-corner-tr {
+  position: absolute;
+  top: -15px;
+  right: -20px;
+  width: 205px;
+  height: 205px;
+  background-image: url('../assets/floral-corner.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right top;
+  transform: scaleX(-1);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
+}
+
+.site-footer__main {
+  position: relative;
+  z-index: 3;
+}
+
+.site-footer__bottom {
+  position: relative;
+  z-index: 3;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   10. RESPONSIVE DESIGN (Desktop, Laptop, Tablet, Mobile)
+   ────────────────────────────────────────────────────────────────────────── */
+@media (max-width: 1240px) {
+  .hero__floral-corner-tl,
+  .hero__floral-corner-tr {
+    width: 250px;
+    height: 250px;
+    top: -10px;
+  }
+  .hero__floral-corner-tl {
+    left: -12px;
+  }
+  .hero__floral-corner-tr {
+    right: -12px;
+  }
+  .testimonials__track--cols-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .site-footer__floral-corner-tl {
+    top: -12px;
+    left: -15px;
+    width: 175px;
+    height: 175px;
+  }
+  .site-footer__floral-corner-tr {
+    top: -12px;
+    right: -15px;
+    width: 175px;
+    height: 175px;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero__floral-corner-tl,
+  .hero__floral-corner-tr {
+    width: 190px;
+    height: 190px;
+    top: -8px;
+  }
+  .hero__floral-corner-tl {
+    left: -10px;
+  }
+  .hero__floral-corner-tr {
+    right: -10px;
+  }
+  .featured-banners__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .banner-card__arched-image-wrapper {
+    height: 320px;
+  }
+  .testimonials__grid-all,
+  .testimonials__track {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+  .category-showcase__grid {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 1.25rem !important;
+    padding: 0.5rem 0.25rem 1.25rem !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  .category-showcase__grid::-webkit-scrollbar {
+    display: none;
+  }
+  .category-showcase__grid > * {
+    flex: 0 0 230px !important;
+    scroll-snap-align: start !important;
+  }
+  .testimonials__curved-backdrop {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  .testimonials__floral-corner-left,
+  .testimonials__floral-corner-right {
+    width: 110px;
+    height: 110px;
+  }
+  .newsletter-card__floral-left,
+  .newsletter-card__floral-right {
+    width: 130px;
+    height: 130px;
+  }
+  .site-footer__floral-corner-tl {
+    top: -10px;
+    left: -12px;
+    width: 135px;
+    height: 135px;
+    opacity: 0.75;
+  }
+  .site-footer__floral-corner-tr {
+    top: -10px;
+    right: -12px;
+    width: 135px;
+    height: 135px;
+    opacity: 0.75;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__floral-corner-tl,
+  .hero__floral-corner-tr {
+    width: 130px;
+    height: 130px;
+    opacity: 0.8;
+    top: -5px;
+  }
+  .hero__floral-corner-tl {
+    left: -6px;
+  }
+  .hero__floral-corner-tr {
+    right: -6px;
+  }
+  .navbar__utility-right {
+    gap: 0.85rem;
+  }
+  .navbar__utility-right .icon-btn {
+    width: 34px;
+    height: 34px;
+  }
+  .navbar__utility-right .icon-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  .category-showcase__grid > * {
+    flex: 0 0 205px !important;
+  }
+  .category-showcase__info {
+    padding: 1.1rem 1rem 1.3rem 1rem !important;
+  }
+  .category-showcase__name {
+    font-size: 1.05rem !important;
+  }
+  .category-showcase__tagline {
+    font-size: 0.76rem !important;
+    margin-bottom: 0.9rem !important;
+    min-height: auto !important;
+  }
+  .category-showcase__cta {
+    font-size: 0.64rem !important;
+    letter-spacing: 0.16em !important;
+  }
+  .banner-card-outer {
+    padding: 16px 16px 22px 16px;
+    border-radius: 28px 28px 20px 20px;
+  }
+  .banner-card__arched-image-wrapper {
+    height: 280px;
+    border-radius: 180px 180px 14px 14px;
+  }
+  .banner-card__title {
+    font-size: 1.75rem;
+  }
+  .banner-card__floral-corner {
+    width: 80px;
+    height: 80px;
+  }
+  .testimonials__grid-all,
+  .testimonials__track {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  .testimonial-card {
+    min-height: auto;
+    border-radius: 90px 90px 20px 20px;
+  }
+  .testimonial-card__image-container {
+    height: 180px;
+  }
+  .testimonials__floral-corner-left,
+  .testimonials__floral-corner-right {
+    display: none;
+  }
+  .newsletter-card__floral-left,
+  .newsletter-card__floral-right {
+    display: none;
+  }
+  .site-footer__floral-corner-tl {
+    top: -8px;
+    left: -10px;
+    width: 95px;
+    height: 95px;
+    opacity: 0.7;
+  }
+  .site-footer__floral-corner-tr {
+    top: -8px;
+    right: -10px;
+    width: 95px;
+    height: 95px;
+    opacity: 0.7;
+  }
+  .section-petal {
+    opacity: 0.5;
+  }
+}

@@ -3,20 +3,20 @@
 :root {
   /* Brand Color Palette */
   --color-warm-ivory: #ffffff;
-  --color-champagne-beige: #D8C6A0;
-  --color-muted-taupe: #A78E70;
-  --color-warm-brown: #7B5D42;
-  --color-deep-espresso: #3E281C;
+  --color-champagne-beige: #C5A059;
+  --color-muted-taupe: #88A2BC;
+  --color-warm-brown: #2D5886;
+  --color-deep-espresso: #102A43;
 
   /* Extended Nuanced Shades */
-  --color-espresso-light: #4A3326;
-  --color-espresso-dark: #2B1A12;
+  --color-espresso-light: #23415E;
+  --color-espresso-dark: #0D1E2F;
   --color-ivory-light: #ffffff;
   --color-ivory-muted: #f5f5f5;
-  --color-beige-glow: rgba(216, 198, 160, 0.15);
+  --color-beige-glow: rgba(197, 160, 89, 0.15);
 
   /* Functional Colors */
-  --bg-primary: #ffffff;
+  --bg-primary: #EBF3FA;
   --bg-dark-hero: #ffffff;
   --text-primary: var(--color-deep-espresso);
   --text-secondary: var(--color-warm-brown);
@@ -65,7 +65,7 @@
   --z-modal: 400;
 
   /* Shadows (Subtle, quiet luxury) */
-  --shadow-subtle: 0 4px 20px rgba(62, 40, 28, 0.05);
-  --shadow-editorial: 0 12px 40px rgba(43, 26, 18, 0.18);
-  --shadow-hover: 0 20px 45px rgba(30, 18, 12, 0.25);
+  --shadow-subtle: 0 4px 20px rgba(16, 42, 67, 0.05);
+  --shadow-editorial: 0 12px 40px rgba(13, 30, 47, 0.18);
+  --shadow-hover: 0 20px 45px rgba(13, 30, 47, 0.25);
 }

@@ -77,12 +77,31 @@ const loopedGalleryItems = [...galleryItems, ...galleryItems];
 export const Hero: React.FC = () => {
   return (
     <section className="hero" id="hero">
+      {/* 3D Floral Luxury Top Corner Bouquets (Reference 1) */}
+      <div className="hero__floral-corner-tl" aria-hidden="true" />
+      <div className="hero__floral-corner-tr" aria-hidden="true" />
+
+      {/* Floating Petals (Scrolls naturally with Hero, subtle ambient luxury) */}
+      <div className="section-petal petal-blue petal-anim-1" style={{ top: '15%', left: '12%', width: '28px', height: '28px' }} aria-hidden="true" />
+      <div className="section-petal petal-white petal-anim-2" style={{ top: '35%', right: '14%', width: '32px', height: '32px' }} aria-hidden="true" />
+      <div className="section-petal petal-blue petal-anim-3" style={{ top: '70%', left: '18%', width: '24px', height: '24px' }} aria-hidden="true" />
+      <div className="section-petal petal-white petal-anim-4" style={{ top: '75%', right: '20%', width: '26px', height: '26px' }} aria-hidden="true" />
+      <div className="section-petal petal-blue petal-anim-5" style={{ top: '48%', left: '8%', width: '22px', height: '22px', opacity: 0.7 }} aria-hidden="true" />
+      <div className="section-petal petal-white petal-anim-3" style={{ top: '85%', right: '10%', width: '25px', height: '25px', opacity: 0.75 }} aria-hidden="true" />
+      <div className="section-petal petal-blue petal-anim-2" style={{ top: '28%', left: '5%', width: '24px', height: '24px', opacity: 0.7 }} aria-hidden="true" />
+      <div className="section-petal petal-white petal-anim-5" style={{ top: '62%', right: '6%', width: '26px', height: '26px', opacity: 0.75 }} aria-hidden="true" />
+
+      {/* Delicate Sparkles (Scrolls with Hero) */}
+      <div className="section-sparkle sparkle-anim-1" style={{ top: '22%', left: '25%', fontSize: '15px' }} aria-hidden="true">✦</div>
+      <div className="section-sparkle sparkle-anim-2" style={{ top: '18%', right: '28%', fontSize: '18px' }} aria-hidden="true">✦</div>
+      <div className="section-sparkle sparkle-anim-3" style={{ top: '65%', right: '12%', fontSize: '14px' }} aria-hidden="true">✦</div>
+
       {/* Editorial Content Column */}
       <div className="hero__content">
         <ScrollReveal delay={0}>
           <div className="hero__brand-badge">
             <span className="hero__badge-sparkle">✦</span>
-            <span>LAB GROWN DIAMONDS</span>
+            <span>NATURAL DIAMOND DUBAI</span>
           </div>
           <h1 className="hero__headline">
             AZ JEWELRY, <span className="hero__headline-italic">REFINED</span> FOR YOU.

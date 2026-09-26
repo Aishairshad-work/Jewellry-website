@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, ShieldCheck, Truck, Lock, CreditCard, Banknote, Building2 } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { formatPKR } from '../data/products';
-import logo from '../assets/Logo-black.png';
+import logo from '../assets/logo-az-gold.png';
 
 export const CheckoutPage: React.FC = () => {
   const navigate = useNavigate();

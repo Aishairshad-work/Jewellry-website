@@ -12,6 +12,7 @@ import './styles/globals.css';
 import './styles/home.css';
 import './styles/about.css';
 import './styles/preloader.css';
+import './styles/floral-theme.css';
 
 // Scroll to top automatically when navigating to new routes
 const ScrollToTop: React.FC = () => {

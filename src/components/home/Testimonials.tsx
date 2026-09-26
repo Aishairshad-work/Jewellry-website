@@ -1,6 +1,14 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import React from 'react';
+import { Star } from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
+
+// Existing photography assets from the AZ JEWELRY project
+import heroSetImg from '../../assets/hero-set.jpg';
+import heroRingImg from '../../assets/hero-ring.jpg';
+import heroNecklaceImg from '../../assets/hero-neckless3.jpg';
+import heroBraceletImg from '../../assets/hero-brecelet.jpg';
+import heroNecklace4Img from '../../assets/hero-neckless4.jpg';
+import braceletDiamondImg from '../../assets/bracelet-elegant-diamond.jpg';
 
 export interface TestimonialItem {
   id: string;
@@ -10,139 +18,105 @@ export interface TestimonialItem {
   testimonial: string;
   avatarInitials: string;
   purchasedItem?: string;
+  image: string;
+  isFeatured?: boolean;
 }
 
 const testimonialsData: TestimonialItem[] = [
   {
     id: '1',
-    name: 'Ayesha Khan',
-    location: 'Karachi',
-    rating: 5,
-    testimonial:
-      '“The diamond brilliance is even more breathtaking in person. My AZ JEWELRY pieces feel elegant enough for grand celebrations yet effortless enough to wear every day.”',
-    avatarInitials: 'AK',
-    purchasedItem: 'AZ Luminary Solitaire Ring'
-  },
-  {
-    id: '2',
     name: 'Mahnoor Ahmed',
-    location: 'Lahore',
+    location: 'Lahore, Pakistan',
     rating: 5,
     testimonial:
-      '“I ordered a lab diamond pendant for my sister and the presentation was stunning. The diamond clarity looked incredibly refined and she absolutely loved it.”',
+      '“I ordered a diamond pendant for my sister and she absolutely loved it. The quality and packaging were beyond expectations. Truly a wonderful experience!”',
     avatarInitials: 'MA',
+    image: heroSetImg,
     purchasedItem: 'AZ Étoile Lab Diamond Pendant'
   },
   {
-    id: '3',
+    id: '2',
     name: 'Sara Malik',
-    location: 'Karachi',
+    location: 'Karachi, Pakistan',
     rating: 5,
     testimonial:
-      '“AZ JEWELRY has such a beautiful balance of modern design and timeless diamond brilliance. It has quickly become my go-to luxury jewellery brand.”',
+      '“AZ JEWELRY has such a beautiful collection, I\'m in love with my ring and their packaging. It beyond stunning.”',
     avatarInitials: 'SM',
+    image: heroRingImg,
+    isFeatured: true,
     purchasedItem: 'AZ Royal Diamond Set'
   },
   {
-    id: '4',
+    id: '3',
     name: 'Hira Sheikh',
-    location: 'Islamabad',
+    location: 'Islamabad, Pakistan',
     rating: 5,
     testimonial:
-      '“Exquisite finishing, certified lab-grown diamonds, and a very premium luxury experience. The tennis bracelet received compliments the first time I wore it.”',
+      '“Excellent service and highly professional team. The jewellery is exactly as shown and even more beautiful in real life. I\'ll definitely shop again!”',
     avatarInitials: 'HS',
+    image: heroNecklaceImg,
+    purchasedItem: 'AZ Luminary Solitaire Ring'
+  },
+  {
+    id: '4',
+    name: 'Ayesha Khan',
+    location: 'Rawalpindi, Pakistan',
+    rating: 5,
+    testimonial:
+      '“From ordering to delivery, everything was perfect. The quality, shine and elegance of the pieces are unmatched. AZ Jewelry is now my favorite brand!”',
+    avatarInitials: 'AK',
+    image: heroBraceletImg,
     purchasedItem: 'AZ Seraphina Diamond Tennis Bracelet'
+  },
+  {
+    id: '5',
+    name: 'Zainab Tariq',
+    location: 'Islamabad, Pakistan',
+    rating: 5,
+    testimonial:
+      '“The craftsmanship on my diamond necklace is breathtaking. Wearing it to our anniversary dinner made me feel truly radiant. Thank you AZ JEWELRY!”',
+    avatarInitials: 'ZT',
+    image: heroNecklace4Img,
+    purchasedItem: 'AZ Luminary Solitaire Pendant'
+  },
+  {
+    id: '6',
+    name: 'Dua Fatima',
+    location: 'Lahore, Pakistan',
+    rating: 5,
+    testimonial:
+      '“The sparkle and diamond clarity exceeded every expectation. The bespoke unboxing experience felt like a dream. Highly recommended!”',
+    avatarInitials: 'DF',
+    image: braceletDiamondImg,
+    purchasedItem: 'AZ Celeste Diamond Tennis Bracelet'
   }
 ];
 
 export const Testimonials: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
-  const [isPaused, setIsPaused] = useState(false);
-  const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
-
-  // Responsive items per page detection
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setItemsPerPage(1);
-      } else if (window.innerWidth < 1024) {
-        setItemsPerPage(2);
-      } else {
-        setItemsPerPage(3);
-      }
-    };
-
-    handleResize();
-    window.addEventListener('resize', handleResize, { passive: true });
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const totalItems = testimonialsData.length;
-
-  const handleNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalItems);
-  }, [totalItems]);
-
-  const handlePrev = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalItems) % totalItems);
-  }, [totalItems]);
-
-  // Auto-play timer
-  useEffect(() => {
-    if (isPaused) return;
-
-    const timer = setInterval(() => {
-      handleNext();
-    }, 5000);
-
-    return () => clearInterval(timer);
-  }, [isPaused, handleNext]);
-
-  // Mobile swipe gestures
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
-  };
-
-  const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    const distance = touchStartX.current - touchEndX.current;
-    const minSwipeDistance = 40;
-
-    if (distance > minSwipeDistance) {
-      handleNext();
-    } else if (distance < -minSwipeDistance) {
-      handlePrev();
-    }
-
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
-  const getVisibleTestimonials = () => {
-    const visible: TestimonialItem[] = [];
-    for (let i = 0; i < totalItems; i++) {
-      const idx = (currentIndex + i) % totalItems;
-      visible.push(testimonialsData[idx]);
-    }
-    return visible;
-  };
-
-  const visibleTestimonials = getVisibleTestimonials();
-
   return (
     <section className="testimonials-section" id="testimonials" aria-label="Customer Reviews">
+
+      {/* Floating Petals within Testimonials (Subtle ambient float, scrolls with page) */}
+      <div className="section-petal petal-blue petal-anim-1" style={{ top: '12%', left: '8%', width: '28px', height: '28px' }} aria-hidden="true" />
+      <div className="section-petal petal-white petal-anim-4" style={{ top: '75%', right: '9%', width: '30px', height: '30px' }} aria-hidden="true" />
+      <div className="section-petal petal-white petal-anim-2" style={{ top: '32%', right: '14%', width: '24px', height: '24px', opacity: 0.8 }} aria-hidden="true" />
+      <div className="section-petal petal-blue petal-anim-5" style={{ top: '82%', left: '12%', width: '26px', height: '26px', opacity: 0.75 }} aria-hidden="true" />
+      <div className="section-petal petal-white petal-anim-3" style={{ top: '22%', right: '5%', width: '25px', height: '25px', opacity: 0.7 }} aria-hidden="true" />
+      <div className="section-petal petal-blue petal-anim-2" style={{ top: '65%', left: '5%', width: '26px', height: '26px', opacity: 0.75 }} aria-hidden="true" />
+
+      {/* Sparkles */}
+      <div className="section-sparkle sparkle-anim-3" style={{ top: '10%', right: '22%', fontSize: '15px' }} aria-hidden="true">✦</div>
+      <div className="section-sparkle sparkle-anim-2" style={{ top: '85%', left: '16%', fontSize: '16px' }} aria-hidden="true">✦</div>
+
       <div className="container">
         <ScrollReveal delay={0}>
         {/* Organic Curved Container Backdrop */}
         <div className="testimonials__curved-backdrop">
+          {/* 3D Floral Corner Accents */}
+          <div className="testimonials__floral-corner-left" aria-hidden="true" />
+          <div className="testimonials__floral-corner-right" aria-hidden="true" />
           
-          {/* Header & Controls Row */}
+          {/* Header Row */}
           <div className="testimonials__header">
             <div className="testimonials__heading-group">
               <span className="testimonials__eyebrow">CUSTOMER STORIES</span>
@@ -151,84 +125,76 @@ export const Testimonials: React.FC = () => {
                 Thoughtfully chosen lab-grown diamond pieces, beautifully worn and treasured.
               </p>
             </div>
-
-            {/* Circular Navigation Buttons */}
-            <div className="testimonials__controls" role="group" aria-label="Carousel Controls">
-              <button
-                className="testimonials__nav-btn"
-                onClick={handlePrev}
-                aria-label="Previous testimonial"
-                type="button"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                className="testimonials__nav-btn"
-                onClick={handleNext}
-                aria-label="Next testimonial"
-                type="button"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
           </div>
 
-          {/* Carousel Track Container */}
-          <div
-            className="testimonials__carousel-wrapper"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <div className="testimonials__track">
-              {visibleTestimonials.slice(0, itemsPerPage).map((item) => (
-                <article key={item.id} className="testimonial-card">
-                  {/* Subtle Oversized Quote Mark */}
-                  <span className="testimonial-card__quote-watermark" aria-hidden="true">
-                    “
-                  </span>
+          {/* Testimonials Grid — All 6 Cards in Front */}
+          <div className="testimonials__carousel-wrapper">
+            <div className="testimonials__track testimonials__grid-all">
+              {testimonialsData.map((item) => (
+                <article
+                  key={item.id}
+                  className={`testimonial-card ${item.isFeatured ? 'testimonial-card--featured' : ''}`}
+                >
+                  {/* Top Arch Crest for Featured Card (Reference 1) */}
+                  {item.isFeatured && (
+                    <div className="testimonial-card__crest" aria-hidden="true">
+                      <span className="testimonial-card__crest-icon">✦</span>
+                    </div>
+                  )}
 
-                  {/* Rating Stars */}
-                  <div className="testimonial-card__stars" aria-label={`Rating ${item.rating} out of 5 stars`}>
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} size={14} fill="#D8C6A0" color="#D8C6A0" className="star-icon" />
-                    ))}
+                  {/* Arched Top Image Area */}
+                  <div className="testimonial-card__image-container">
+                    <img
+                      src={item.image}
+                      alt={`Jewellery worn by ${item.name}`}
+                      className="testimonial-card__img"
+                      loading="lazy"
+                    />
                   </div>
 
-                  {/* Review Text */}
-                  <blockquote className="testimonial-card__quote">
-                    <p>{item.testimonial}</p>
-                  </blockquote>
+                  {/* Circular Quotation Badge overlapping the seam */}
+                  <div className="testimonial-card__quote-badge" aria-hidden="true">
+                    <span className="testimonial-card__quote-mark">“</span>
+                  </div>
 
-                  {/* Customer Info Footer */}
-                  <div className="testimonial-card__author">
-                    <div className="testimonial-card__avatar">
-                      <span>{item.avatarInitials}</span>
+                  {/* Card Content Area */}
+                  <div className="testimonial-card__content">
+                    {/* Rating Stars (5 gold stars) */}
+                    <div className="testimonial-card__stars" aria-label={`Rating ${item.rating} out of 5 stars`}>
+                      {[...Array(item.rating)].map((_, i) => (
+                        <Star key={i} size={13} fill="#C5A059" color="#C5A059" className="star-icon" />
+                      ))}
                     </div>
-                    <div className="testimonial-card__details">
-                      <h3 className="testimonial-card__name">{item.name}</h3>
-                      <span className="testimonial-card__location">{item.location}, Pakistan</span>
+
+                    {/* Review Text */}
+                    <blockquote className="testimonial-card__quote">
+                      <p>{item.testimonial}</p>
+                    </blockquote>
+
+                    {/* Author Section */}
+                    <div className="testimonial-card__author">
+                      <div className="testimonial-card__avatar">
+                        <span>{item.avatarInitials}</span>
+                      </div>
+                      <div className="testimonial-card__details">
+                        <h3 className="testimonial-card__name">{item.name}</h3>
+                        <span className="testimonial-card__location">{item.location}</span>
+                      </div>
                     </div>
+
+                    {/* Small Elegant Gold Decorative Line Near Bottom (Reference 1) */}
+                    <div className="testimonial-card__bottom-line" aria-hidden="true" />
                   </div>
                 </article>
               ))}
             </div>
           </div>
 
-          {/* Pagination Indicators */}
-          <div className="testimonials__pagination" role="tablist" aria-label="Testimonial slides">
-            {testimonialsData.map((item, index) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`testimonials__dot ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => setCurrentIndex(index)}
-                aria-label={`Go to testimonial ${index + 1}`}
-                aria-selected={index === currentIndex}
-              />
-            ))}
+          {/* Elegant Centered Diamond Sparkle Divider Line at Bottom */}
+          <div className="testimonials__bottom-divider" aria-hidden="true">
+            <span className="divider-line" />
+            <span className="divider-gem">✦</span>
+            <span className="divider-line" />
           </div>
 
         </div>
