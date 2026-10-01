@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Heart, ShoppingBag, Sparkles } from 'lucide-react';
+import React from 'react';
+import { Heart, ShoppingBag } from 'lucide-react';
 import { Product, formatPKR } from '../../data/products';
 import { useShop } from '../../context/ShopContext';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +9,6 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const { toggleWishlist, isInWishlist, addToCart } = useShop();
   const navigate = useNavigate();
   const isWishlisted = isInWishlist(product.id);
-  const [showSparklePop, setShowSparklePop] = useState(false);
 
   const handleCardClick = (e: React.MouseEvent) => {
     const target = e.target as HTMLElement;
@@ -27,12 +26,10 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const handleAddToCartClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     addToCart(product, 1);
-    setShowSparklePop(true);
-    setTimeout(() => setShowSparklePop(false), 900);
   };
 
   return (
-    <TiltCard maxTilt={8}>
+    <TiltCard maxTilt={8} className="product-card-tilt-wrap">
       <article className="product-card" onClick={handleCardClick}>
         <div className={`product-card__img-box ${product.bgTheme ? `product-card__img-box--${product.bgTheme}` : ''}`}>
           
@@ -45,9 +42,6 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           >
             <Heart size={16} fill={isWishlisted ? 'var(--color-champagne-beige)' : 'none'} color="var(--color-champagne-beige)" />
           </button>
-
-          {/* Subtle Luxury Sparkle Accent */}
-          <span className="product-card__floral-sparkle" aria-hidden="true">✦</span>
 
           {/* Optional Badge */}
           {product.badge && (
@@ -63,13 +57,6 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
             className="product-card__img"
             loading="lazy"
           />
-
-          {/* Flying Sparkle Burst Feedback */}
-          {showSparklePop && (
-            <div className="az-sparkle-burst" aria-hidden="true">
-              <Sparkles size={28} color="var(--color-champagne-beige)" />
-            </div>
-          )}
 
           {/* Quick Add To Cart Slide-up */}
           <div className="product-card__quick-add">

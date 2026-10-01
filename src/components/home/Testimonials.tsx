@@ -1,5 +1,5 @@
-import React from 'react';
-import { Star } from 'lucide-react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ScrollReveal } from '../common/ScrollReveal';
 
 // Existing photography assets from the AZ JEWELRY project
@@ -93,16 +93,89 @@ const testimonialsData: TestimonialItem[] = [
 ];
 
 export const Testimonials: React.FC = () => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  // Responsive items per page detection (3 desktop, 2 tablet, 1 mobile)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(testimonialsData.length / itemsPerPage);
+
+  // Keep currentPage within bounds if screen resizes
+  useEffect(() => {
+    if (currentPage >= totalPages) {
+      setCurrentPage(0);
+    }
+  }, [totalPages, currentPage]);
+
+  const handleNext = useCallback(() => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  }, [totalPages]);
+
+  const handlePrev = useCallback(() => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  }, [totalPages]);
+
+  // Gentle 6s autoplay with pause on hover
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      handleNext();
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [isPaused, handleNext]);
+
+  // Mobile swipe gestures
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 45;
+
+    if (distance > minSwipeDistance) {
+      handleNext();
+    } else if (distance < -minSwipeDistance) {
+      handlePrev();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
+  // Slice exactly 3 cards on desktop (or itemsPerPage)
+  const visibleTestimonials = testimonialsData.slice(
+    currentPage * itemsPerPage,
+    currentPage * itemsPerPage + itemsPerPage
+  );
+
   return (
     <section className="testimonials-section" id="testimonials" aria-label="Customer Reviews">
-
-      {/* Floating Petals within Testimonials (Subtle ambient float, scrolls with page) */}
-      <div className="section-petal petal-blue petal-anim-1" style={{ top: '12%', left: '8%', width: '28px', height: '28px' }} aria-hidden="true" />
-      <div className="section-petal petal-white petal-anim-4" style={{ top: '75%', right: '9%', width: '30px', height: '30px' }} aria-hidden="true" />
-      <div className="section-petal petal-white petal-anim-2" style={{ top: '32%', right: '14%', width: '24px', height: '24px', opacity: 0.8 }} aria-hidden="true" />
-      <div className="section-petal petal-blue petal-anim-5" style={{ top: '82%', left: '12%', width: '26px', height: '26px', opacity: 0.75 }} aria-hidden="true" />
-      <div className="section-petal petal-white petal-anim-3" style={{ top: '22%', right: '5%', width: '25px', height: '25px', opacity: 0.7 }} aria-hidden="true" />
-      <div className="section-petal petal-blue petal-anim-2" style={{ top: '65%', left: '5%', width: '26px', height: '26px', opacity: 0.75 }} aria-hidden="true" />
 
       {/* Sparkles */}
       <div className="section-sparkle sparkle-anim-3" style={{ top: '10%', right: '22%', fontSize: '15px' }} aria-hidden="true">✦</div>
@@ -112,10 +185,6 @@ export const Testimonials: React.FC = () => {
         <ScrollReveal delay={0}>
         {/* Organic Curved Container Backdrop */}
         <div className="testimonials__curved-backdrop">
-          {/* 3D Floral Corner Accents */}
-          <div className="testimonials__floral-corner-left" aria-hidden="true" />
-          <div className="testimonials__floral-corner-right" aria-hidden="true" />
-          
           {/* Header Row */}
           <div className="testimonials__header">
             <div className="testimonials__heading-group">
@@ -125,12 +194,39 @@ export const Testimonials: React.FC = () => {
                 Thoughtfully chosen lab-grown diamond pieces, beautifully worn and treasured.
               </p>
             </div>
+
+            {/* Circular Navigation Buttons */}
+            <div className="testimonials__controls" role="group" aria-label="Customer Stories Navigation">
+              <button
+                className="testimonials__nav-btn"
+                onClick={handlePrev}
+                aria-label="Previous customer stories"
+                type="button"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                className="testimonials__nav-btn"
+                onClick={handleNext}
+                aria-label="Next customer stories"
+                type="button"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
           </div>
 
-          {/* Testimonials Grid — All 6 Cards in Front */}
-          <div className="testimonials__carousel-wrapper">
-            <div className="testimonials__track testimonials__grid-all">
-              {testimonialsData.map((item) => (
+          {/* Testimonials Carousel — 3 visible at a time, other 3 hidden in navigation */}
+          <div
+            className="testimonials__carousel-wrapper"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className="testimonials__track" key={currentPage}>
+              {visibleTestimonials.map((item) => (
                 <article
                   key={item.id}
                   className={`testimonial-card ${item.isFeatured ? 'testimonial-card--featured' : ''}`}
@@ -188,6 +284,20 @@ export const Testimonials: React.FC = () => {
                 </article>
               ))}
             </div>
+          </div>
+
+          {/* Pagination Indicators */}
+          <div className="testimonials__pagination" role="tablist" aria-label="Customer stories slides">
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                className={`testimonials__dot ${index === currentPage ? 'active' : ''}`}
+                onClick={() => setCurrentPage(index)}
+                aria-label={`Go to slide ${index + 1}`}
+                aria-selected={index === currentPage}
+              />
+            ))}
           </div>
 
           {/* Elegant Centered Diamond Sparkle Divider Line at Bottom */}

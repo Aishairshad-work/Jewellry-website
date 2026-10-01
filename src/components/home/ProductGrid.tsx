@@ -12,15 +12,6 @@ export const ProductGrid: React.FC = () => {
   return (
     <section className="product-showcase" id="shop">
 
-      {/* Floating Petals within Featured Section (Subtle ambient float) */}
-      <div className="section-petal petal-white petal-anim-3" style={{ top: '10%', right: '11%', width: '28px', height: '28px' }} aria-hidden="true" />
-      <div className="section-petal petal-blue petal-anim-2" style={{ top: '50%', left: '7%', width: '26px', height: '26px' }} aria-hidden="true" />
-      <div className="section-petal petal-white petal-anim-5" style={{ top: '88%', right: '14%', width: '30px', height: '30px' }} aria-hidden="true" />
-      <div className="section-petal petal-blue petal-anim-1" style={{ top: '28%', left: '15%', width: '22px', height: '22px', opacity: 0.7 }} aria-hidden="true" />
-      <div className="section-petal petal-white petal-anim-4" style={{ top: '68%', right: '8%', width: '25px', height: '25px', opacity: 0.75 }} aria-hidden="true" />
-      <div className="section-petal petal-white petal-anim-1" style={{ top: '35%', right: '5%', width: '24px', height: '24px', opacity: 0.7 }} aria-hidden="true" />
-      <div className="section-petal petal-blue petal-anim-3" style={{ top: '78%', left: '4%', width: '26px', height: '26px', opacity: 0.75 }} aria-hidden="true" />
-
       {/* Sparkles */}
       <div className="section-sparkle sparkle-anim-2" style={{ top: '8%', left: '18%', fontSize: '15px' }} aria-hidden="true">✦</div>
       <div className="section-sparkle sparkle-anim-1" style={{ top: '90%', left: '32%', fontSize: '16px' }} aria-hidden="true">✦</div>
@@ -39,7 +30,7 @@ export const ProductGrid: React.FC = () => {
         {/* 4-Column Product Grid using reusable ProductCard */}
         <div className="product-grid">
           {featuredProducts.map((product, index) => (
-            <ScrollReveal key={product.id} delay={index * 80}>
+            <ScrollReveal key={product.id} delay={index * 80} className="product-grid__item" style={{ height: '100%' }}>
               <ProductCard product={product} />
             </ScrollReveal>
           ))}

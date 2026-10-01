@@ -15,7 +15,8 @@
 .page-wrapper {
   position: relative;
   overflow-x: clip;
-  background: radial-gradient(circle at 50% 0%, #FFFFFF 0%, #F0F6FC 35%, #E5EFF8 75%, #DCEDF9 100%);
+  background: radial-gradient(circle at 50% 0%, #FFFDF8 0%, #FAF1DC 30%, #F7ECD4 65%, #F4E4C5 100%) !important;
+  background-color: var(--bg-primary) !important;
   min-height: 100vh;
 }
 
@@ -31,28 +32,9 @@
   overflow-x: clip;
 }
 
-/* ──────────────────────────────────────────────────────────────────────────
-   1. SECTION-BASED FLOATING PETALS (Gentle breeze animation)
-   ────────────────────────────────────────────────────────────────────────── */
+/* Section-based floating petals — Removed as per user request */
 .section-petal {
-  position: absolute;
-  pointer-events: none;
-  user-select: none;
-  will-change: transform, opacity;
-  z-index: 3;
-  filter: drop-shadow(0 6px 12px rgba(16, 42, 67, 0.08));
-}
-
-.petal-blue {
-  background-image: url('../assets/floral-petal-blue.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.petal-white {
-  background-image: url('../assets/floral-petal-white.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+  display: none !important;
 }
 
 /* Petal Keyframe Variations */
@@ -160,39 +142,9 @@
   z-index: 1;
 }
 
-.hero__floral-corner-tl {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 340px;
-  height: 340px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left top;
-  pointer-events: none;
-  z-index: 1;
-  filter: drop-shadow(0 12px 28px rgba(16, 42, 67, 0.1));
-  animation: floralSwayTL 12s ease-in-out infinite alternate;
-  transform-origin: center center;
-}
-
+.hero__floral-corner-tl,
 .hero__floral-corner-tr {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 340px;
-  height: 340px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left top;
-  transform: scaleX(-1);
-  transform-origin: center center;
-  pointer-events: none;
-  z-index: 1;
-  filter: drop-shadow(0 12px 28px rgba(16, 42, 67, 0.1));
-  animation: floralSwayTR 14s ease-in-out infinite alternate;
+  display: none !important;
 }
 
 .hero__floral-left,
@@ -330,11 +282,11 @@
 }
 
 .category-showcase__card {
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: #FFFFFF !important;
   backdrop-filter: blur(12px) !important;
-  border: 1px solid rgba(197, 160, 89, 0.35) !important;
+  border: 1px solid rgba(197, 160, 89, 0.4) !important;
   border-radius: 14px !important;
-  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.07) !important;
+  box-shadow: 0 10px 30px rgba(78, 60, 29, 0.07) !important;
   padding: 0 !important;
   display: flex !important;
   flex-direction: column !important;
@@ -344,7 +296,7 @@
 
 .category-showcase__card:hover {
   transform: translateY(-8px) scale(1.01) !important;
-  box-shadow: 0 22px 50px rgba(16, 42, 67, 0.16) !important;
+  box-shadow: 0 22px 50px rgba(78, 60, 29, 0.16) !important;
   border-color: rgba(197, 160, 89, 0.75) !important;
 }
 
@@ -378,7 +330,7 @@
   font-size: clamp(1.15rem, 1.25vw, 1.3rem) !important;
   line-height: 1.3 !important;
   letter-spacing: 0.03em !important;
-  color: #102A43 !important;
+  color: #3B2D16 !important;
   margin-bottom: 0.4rem !important;
   display: block !important;
   transition: color 250ms ease !important;
@@ -395,7 +347,7 @@
   font-size: 0.82rem !important;
   line-height: 1.5 !important;
   letter-spacing: 0.015em !important;
-  color: #486581 !important;
+  color: #6E5632 !important;
   margin-bottom: 1.15rem !important;
   display: block !important;
   min-height: 2.4em !important;
@@ -412,7 +364,7 @@
   font-weight: 600 !important;
   letter-spacing: 0.2em !important;
   text-transform: uppercase !important;
-  color: #102A43 !important;
+  color: #3B2D16 !important;
   padding-bottom: 0.3rem !important;
   border-bottom: 1.5px solid rgba(197, 160, 89, 0.45) !important;
   margin-top: auto !important;
@@ -480,17 +432,17 @@
 .banner-card-outer {
   position: relative;
   border-radius: 40px 40px 28px 28px;
-  background: rgba(255, 255, 255, 0.94);
+  background: #FFFFFF !important;
   backdrop-filter: blur(12px);
   border: 1.5px solid rgba(197, 160, 89, 0.45);
-  box-shadow: 0 16px 45px rgba(16, 42, 67, 0.09);
+  box-shadow: 0 16px 45px rgba(78, 60, 29, 0.09);
   padding: 22px 22px 28px 22px;
   transition: transform 450ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 450ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease;
 }
 
 .banner-card-outer:hover {
   transform: translateY(-8px);
-  box-shadow: 0 24px 60px rgba(16, 42, 67, 0.16);
+  box-shadow: 0 24px 60px rgba(78, 60, 29, 0.16);
   border-color: rgba(197, 160, 89, 0.75);
 }
 
@@ -519,38 +471,9 @@
   display: none;
 }
 
-/* Corner Floral Accent on Collections Cards */
+/* Corner Floral Accent on Collections Cards — Removed as per user request */
 .banner-card__floral-corner {
-  position: absolute;
-  width: 130px;
-  height: 130px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 1;
-  filter: drop-shadow(0 6px 16px rgba(16, 42, 67, 0.15));
-  opacity: 0.85;
-  transition: transform 450ms cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.banner-card__floral-corner--tl {
-  top: -18px;
-  left: -20px;
-}
-
-.banner-card__floral-corner--tr {
-  top: -18px;
-  right: -20px;
-  transform: scaleX(-1);
-}
-
-.banner-card-outer:hover .banner-card__floral-corner--tl {
-  transform: scale(1.05) translate(-2px, -2px);
-}
-
-.banner-card-outer:hover .banner-card__floral-corner--tr {
-  transform: scaleX(-1) scale(1.05) translate(-2px, -2px);
+  display: none !important;
 }
 
 /* Inner Link & Structure */
@@ -576,7 +499,7 @@
   height: 380px;
   border-radius: 260px 260px 16px 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.12);
+  box-shadow: 0 10px 30px rgba(78, 60, 29, 0.12);
   border: 1px solid rgba(197, 160, 89, 0.2);
 }
 
@@ -596,18 +519,18 @@
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
-    rgba(16, 42, 67, 0.15) 0%,
-    rgba(16, 42, 67, 0.28) 45%,
-    rgba(16, 42, 67, 0.72) 100%
+    rgba(59, 45, 22, 0.15) 0%,
+    rgba(59, 45, 22, 0.35) 45%,
+    rgba(59, 45, 22, 0.78) 100%
   );
   transition: background 400ms ease;
 }
 
 .banner-card-outer:hover .banner-card__overlay {
   background: linear-gradient(180deg,
-    rgba(16, 42, 67, 0.12) 0%,
-    rgba(16, 42, 67, 0.25) 45%,
-    rgba(16, 42, 67, 0.78) 100%
+    rgba(43, 26, 18, 0.12) 0%,
+    rgba(43, 26, 18, 0.30) 45%,
+    rgba(43, 26, 18, 0.82) 100%
   );
 }
 
@@ -746,7 +669,7 @@
 }
 
 .banner-card-outer:hover .banner-card__cta-label {
-  color: #102A43;
+  color: #3B2D16;
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -767,19 +690,64 @@
   z-index: 2;
 }
 
+.product-grid > *,
+.product-grid__item {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.product-card-tilt-wrap,
+.az-tilt-card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+}
+
 .product-card {
-  background: rgba(255, 255, 255, 0.95) !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 1 !important;
+  background: #FFFFFF !important;
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(197, 160, 89, 0.28) !important;
+  border: 1px solid rgba(197, 160, 89, 0.4) !important;
   border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(16, 42, 67, 0.07) !important;
+  box-shadow: 0 10px 30px rgba(78, 60, 29, 0.07) !important;
   position: relative;
   transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 400ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease !important;
 }
 
+.product-card__info {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  flex: 1 !important;
+}
+
+.product-card__meta {
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.product-card__name {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.35 !important;
+  min-height: 2.7em !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 22px 50px rgba(16, 42, 67, 0.15) !important;
+  box-shadow: 0 22px 50px rgba(78, 60, 29, 0.15) !important;
   border-color: rgba(197, 160, 89, 0.55) !important;
 }
 
@@ -793,23 +761,9 @@
   transform: scale(1.06);
 }
 
+/* Product card hover sparkle — Removed as per user request */
 .product-card__floral-sparkle {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  font-size: 16px;
-  color: var(--color-champagne-beige);
-  opacity: 0;
-  transform: scale(0.6) rotate(0deg);
-  transition: opacity 300ms ease, transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  z-index: 6;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
-}
-
-.product-card:hover .product-card__floral-sparkle {
-  opacity: 1;
-  transform: scale(1.3) rotate(25deg);
+  display: none !important;
 }
 
 /* Button & Link Hover Animations */
@@ -857,41 +811,17 @@
 
 .testimonials__curved-backdrop {
   position: relative;
-  background: rgba(255, 255, 255, 0.92) !important;
+  background: #FFFFFF !important;
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(197, 160, 89, 0.35) !important;
-  box-shadow: 0 16px 50px rgba(16, 42, 67, 0.08) !important;
+  border: 1px solid rgba(197, 160, 89, 0.4) !important;
+  box-shadow: 0 16px 50px rgba(78, 60, 29, 0.08) !important;
   border-radius: 36px;
   padding: 3rem 2.5rem 2.5rem;
 }
 
-.testimonials__floral-corner-left {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 150px;
-  height: 150px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 5;
-  filter: drop-shadow(0 8px 20px rgba(16, 42, 67, 0.12));
-}
-
+.testimonials__floral-corner-left,
 .testimonials__floral-corner-right {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 150px;
-  height: 150px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: rotate(180deg);
-  pointer-events: none;
-  z-index: 5;
-  filter: drop-shadow(0 8px 20px rgba(16, 42, 67, 0.12));
+  display: none !important;
 }
 
 .testimonials__carousel-wrapper {
@@ -910,13 +840,13 @@
 /* Individual Testimonial Card (Reference 1) */
 .testimonial-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: #FFFFFF !important;
   border: 1px solid rgba(197, 160, 89, 0.38) !important;
   border-radius: 120px 120px 24px 24px;
   padding: 12px 12px 24px 12px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 12px 35px rgba(16, 42, 67, 0.07) !important;
+  box-shadow: 0 12px 35px rgba(78, 60, 29, 0.07) !important;
   transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 400ms cubic-bezier(0.25, 1, 0.5, 1), border-color 300ms ease !important;
   animation: testimonialFadeIn 350ms cubic-bezier(0.16, 1, 0.3, 1);
   min-height: 480px;
@@ -936,7 +866,7 @@
 .testimonial-card:hover {
   transform: translateY(-8px);
   border-color: rgba(197, 160, 89, 0.7) !important;
-  box-shadow: 0 20px 48px rgba(16, 42, 67, 0.13) !important;
+  box-shadow: 0 20px 48px rgba(78, 60, 29, 0.13) !important;
 }
 
 /* Featured Card with Gold Arch Peak (Card 2 in Reference 1) */
@@ -975,7 +905,7 @@
   border-radius: 110px 110px 16px 16px;
   overflow: hidden;
   position: relative;
-  background: #EBF3FA;
+  background: #FAF6EE;
 }
 
 .testimonial-card__img {
@@ -997,7 +927,7 @@
   border-radius: 50%;
   background: #FAF6EE;
   border: 1px solid rgba(197, 160, 89, 0.45);
-  box-shadow: 0 4px 12px rgba(16, 42, 67, 0.1);
+  box-shadow: 0 4px 12px rgba(78, 60, 29, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1042,7 +972,7 @@
   font-size: 0.88rem;
   font-weight: 300;
   line-height: 1.6;
-  color: #334E68;
+  color: var(--color-warm-brown);
   margin-bottom: 1.25rem;
   flex: 1;
 }
@@ -1062,7 +992,7 @@
   border-radius: 50%;
   background: #EAE3D2;
   border: 1px solid rgba(197, 160, 89, 0.4);
-  color: #102A43;
+  color: #3B2D16;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 0.82rem;
@@ -1081,7 +1011,7 @@
   font-family: var(--font-serif);
   font-size: 0.95rem;
   font-weight: 600;
-  color: #102A43;
+  color: #3B2D16;
   margin-bottom: 2px;
   line-height: 1.2;
 }
@@ -1089,7 +1019,7 @@
 .testimonial-card__location {
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  color: #7B8A97;
+  color: var(--color-muted-taupe);
   letter-spacing: 0.02em;
 }
 
@@ -1102,13 +1032,70 @@
   border-radius: 2px;
 }
 
-/* Bottom Luxury Divider Line (All 6 Cards in Front) */
+/* Testimonial Controls & Navigation */
+.testimonials__controls {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  flex-shrink: 0 !important;
+}
+
+.testimonials__nav-btn {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(197, 160, 89, 0.45) !important;
+  color: #3B2D16 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px rgba(78, 60, 29, 0.08) !important;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.testimonials__nav-btn:hover {
+  background: #4E3C1D !important;
+  color: #C5A059 !important;
+  border-color: #C5A059 !important;
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 8px 20px rgba(78, 60, 29, 0.18) !important;
+}
+
+.testimonials__pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  margin-top: 2.25rem !important;
+}
+
+.testimonials__dot {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: rgba(197, 160, 89, 0.3) !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  transition: all 300ms ease !important;
+}
+
+.testimonials__dot.active {
+  width: 30px !important;
+  border-radius: 12px !important;
+  background-color: #C5A059 !important;
+  box-shadow: 0 0 10px rgba(197, 160, 89, 0.45) !important;
+}
+
+/* Bottom Luxury Divider Line */
 .testimonials__bottom-divider {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 16px !important;
-  margin-top: 2.75rem !important;
+  margin-top: 2.25rem !important;
   width: 100% !important;
 }
 
@@ -1141,41 +1128,13 @@
 .newsletter-card {
   position: relative;
   overflow: visible !important;
-  box-shadow: 0 20px 60px rgba(13, 30, 47, 0.35) !important;
+  box-shadow: 0 20px 60px rgba(40, 30, 14, 0.28) !important;
 }
 
-/* Bottom-left corner: hugs card corner, behind text & input */
-.newsletter-card__floral-left {
-  position: absolute;
-  bottom: -15px;
-  left: -15px;
-  width: 170px;
-  height: 170px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left bottom;
-  transform: scaleY(-1);
-  pointer-events: none;
-  z-index: 2;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.3));
-}
-
-/* Top-right corner: hugs card corner, behind model image frame */
+/* Newsletter Floral Corners — Removed as per user request */
+.newsletter-card__floral-left,
 .newsletter-card__floral-right {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  width: 170px;
-  height: 170px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right top;
-  transform: scaleX(-1);
-  pointer-events: none;
-  z-index: 2;
-  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.3));
+  display: none !important;
 }
 
 /* Content layer sits comfortably on top of bottom-left floral corner */
@@ -1224,39 +1183,10 @@
   display: none !important;
 }
 
-/* Top-left corner floral cluster (tucked into the top-left frame corner) */
-.site-footer__floral-corner-tl {
-  position: absolute;
-  top: -15px;
-  left: -20px;
-  width: 205px;
-  height: 205px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left top;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.9;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
-}
-
-/* Top-right corner floral cluster (tucked into the top-right frame corner) */
+/* Footer Floral Corners — Removed as per user request */
+.site-footer__floral-corner-tl,
 .site-footer__floral-corner-tr {
-  position: absolute;
-  top: -15px;
-  right: -20px;
-  width: 205px;
-  height: 205px;
-  background-image: url('../assets/floral-corner.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right top;
-  transform: scaleX(-1);
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.9;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.25));
+  display: none !important;
 }
 
 .site-footer__main {
@@ -1273,48 +1203,12 @@
    10. RESPONSIVE DESIGN (Desktop, Laptop, Tablet, Mobile)
    ────────────────────────────────────────────────────────────────────────── */
 @media (max-width: 1240px) {
-  .hero__floral-corner-tl,
-  .hero__floral-corner-tr {
-    width: 250px;
-    height: 250px;
-    top: -10px;
-  }
-  .hero__floral-corner-tl {
-    left: -12px;
-  }
-  .hero__floral-corner-tr {
-    right: -12px;
-  }
   .testimonials__track--cols-4 {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .site-footer__floral-corner-tl {
-    top: -12px;
-    left: -15px;
-    width: 175px;
-    height: 175px;
-  }
-  .site-footer__floral-corner-tr {
-    top: -12px;
-    right: -15px;
-    width: 175px;
-    height: 175px;
   }
 }
 
 @media (max-width: 960px) {
-  .hero__floral-corner-tl,
-  .hero__floral-corner-tr {
-    width: 190px;
-    height: 190px;
-    top: -8px;
-  }
-  .hero__floral-corner-tl {
-    left: -10px;
-  }
-  .hero__floral-corner-tr {
-    right: -10px;
-  }
   .featured-banners__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -1348,46 +1242,9 @@
   .testimonials__curved-backdrop {
     padding: 2.5rem 1.5rem 2rem;
   }
-  .testimonials__floral-corner-left,
-  .testimonials__floral-corner-right {
-    width: 110px;
-    height: 110px;
-  }
-  .newsletter-card__floral-left,
-  .newsletter-card__floral-right {
-    width: 130px;
-    height: 130px;
-  }
-  .site-footer__floral-corner-tl {
-    top: -10px;
-    left: -12px;
-    width: 135px;
-    height: 135px;
-    opacity: 0.75;
-  }
-  .site-footer__floral-corner-tr {
-    top: -10px;
-    right: -12px;
-    width: 135px;
-    height: 135px;
-    opacity: 0.75;
-  }
 }
 
 @media (max-width: 640px) {
-  .hero__floral-corner-tl,
-  .hero__floral-corner-tr {
-    width: 130px;
-    height: 130px;
-    opacity: 0.8;
-    top: -5px;
-  }
-  .hero__floral-corner-tl {
-    left: -6px;
-  }
-  .hero__floral-corner-tr {
-    right: -6px;
-  }
   .navbar__utility-right {
     gap: 0.85rem;
   }
@@ -1428,10 +1285,6 @@
   .banner-card__title {
     font-size: 1.75rem;
   }
-  .banner-card__floral-corner {
-    width: 80px;
-    height: 80px;
-  }
   .testimonials__grid-all,
   .testimonials__track {
     grid-template-columns: 1fr !important;
@@ -1443,28 +1296,6 @@
   }
   .testimonial-card__image-container {
     height: 180px;
-  }
-  .testimonials__floral-corner-left,
-  .testimonials__floral-corner-right {
-    display: none;
-  }
-  .newsletter-card__floral-left,
-  .newsletter-card__floral-right {
-    display: none;
-  }
-  .site-footer__floral-corner-tl {
-    top: -8px;
-    left: -10px;
-    width: 95px;
-    height: 95px;
-    opacity: 0.7;
-  }
-  .site-footer__floral-corner-tr {
-    top: -8px;
-    right: -10px;
-    width: 95px;
-    height: 95px;
-    opacity: 0.7;
   }
   .section-petal {
     opacity: 0.5;

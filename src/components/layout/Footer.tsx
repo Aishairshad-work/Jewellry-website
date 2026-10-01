@@ -151,12 +151,6 @@ export const Footer: React.FC = () => {
     <>
       {/* ── Newsletter Section (full-width, on page background) ── */}
       <section className="newsletter-section" aria-label="Newsletter Subscription">
-        {/* Floating Petals within Newsletter Section (Subtle ambient float) */}
-        <div className="section-petal petal-white petal-anim-2" style={{ top: '15%', left: '12%', width: '28px', height: '28px' }} aria-hidden="true" />
-        <div className="section-petal petal-blue petal-anim-4" style={{ top: '70%', right: '14%', width: '26px', height: '26px' }} aria-hidden="true" />
-        <div className="section-petal petal-blue petal-anim-1" style={{ top: '38%', right: '8%', width: '22px', height: '22px', opacity: 0.7 }} aria-hidden="true" />
-        <div className="section-petal petal-white petal-anim-3" style={{ top: '25%', left: '5%', width: '24px', height: '24px', opacity: 0.7 }} aria-hidden="true" />
-        <div className="section-petal petal-blue petal-anim-5" style={{ top: '82%', right: '6%', width: '25px', height: '25px', opacity: 0.75 }} aria-hidden="true" />
         
         {/* Sparkles */}
         <div className="section-sparkle sparkle-anim-1" style={{ top: '18%', right: '24%', fontSize: '16px' }} aria-hidden="true">✦</div>
@@ -164,10 +158,6 @@ export const Footer: React.FC = () => {
 
         <div className="container">
           <div className="newsletter-card">
-            {/* 3D Floral Luxury Accents (Reference 1) */}
-            <div className="newsletter-card__floral-left" aria-hidden="true" />
-            <div className="newsletter-card__floral-right" aria-hidden="true" />
-
             <div className="newsletter-card__content">
               <span className="newsletter-card__eyebrow">AZ PRIVATE ACCESS</span>
               <h2 className="newsletter-card__title">
@@ -220,15 +210,6 @@ export const Footer: React.FC = () => {
           MAIN FOOTER
       ══════════════════════════════════════════ */}
       <footer className="site-footer" role="contentinfo">
-        {/* Elegant Floral Corner Clusters on Top of Footer */}
-        <div className="site-footer__floral-corner-tl" aria-hidden="true" />
-        <div className="site-footer__floral-corner-tr" aria-hidden="true" />
-
-        {/* Floating Petals within Footer (Subtle ambient float) */}
-        <div className="section-petal petal-white petal-anim-1" style={{ top: '15%', right: '18%', width: '24px', height: '24px' }} aria-hidden="true" />
-        <div className="section-petal petal-blue petal-anim-3" style={{ top: '65%', left: '16%', width: '22px', height: '22px', opacity: 0.7 }} aria-hidden="true" />
-        <div className="section-petal petal-white petal-anim-4" style={{ top: '38%', left: '8%', width: '24px', height: '24px', opacity: 0.7 }} aria-hidden="true" />
-        <div className="section-petal petal-blue petal-anim-2" style={{ top: '80%', right: '12%', width: '25px', height: '25px', opacity: 0.75 }} aria-hidden="true" />
         <div className="section-sparkle sparkle-anim-3" style={{ top: '25%', left: '22%', fontSize: '15px' }} aria-hidden="true">✦</div>
 
         <div className="site-footer__main">
@@ -243,7 +224,7 @@ export const Footer: React.FC = () => {
               <ScrollReveal delay={0}>
                 <div className="footer-col footer-col--brand">
                   <a href="/" aria-label="AZ JEWELRY Home" className="footer-logo__wrapper">
-                    <img src={logo} alt="AZ JEWELRY — Lab Grown Diamonds" className="footer-logo" />
+                    <img src={logo} alt="AZ JEWELRY — Natural Diamonds" className="footer-logo" />
                   </a>
                   <p className="footer-brand__tagline">"LAB GROWN DIAMONDS"</p>
                   <p className="footer-brand__description">
@@ -317,7 +298,7 @@ export const Footer: React.FC = () => {
               {/* Brand block */}
               <div className="footer-mobile-brand">
                 <a href="/" aria-label="AZ JEWELRY Home" className="footer-logo__wrapper">
-                  <img src={logo} alt="AZ JEWELRY — Lab Grown Diamonds" className="footer-logo footer-logo--mobile" />
+                  <img src={logo} alt="AZ JEWELRY — Natural Diamonds" className="footer-logo footer-logo--mobile" />
                 </a>
                 <p className="footer-brand__tagline">"LAB GROWN DIAMONDS"</p>
                 <p className="footer-brand__description">
